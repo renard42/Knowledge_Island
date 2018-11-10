@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/geography.rpy", line 11: end of line expected.
-    show cat geo at right woth move
-                          ^
+The label start is defined twice, at
+  File "game/script.rpy", line 17 and
+  File "game/scripts_menu.rpy", line 110.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 07 14:47:10 2018
+Sat Nov 10 19:22:29 2018
