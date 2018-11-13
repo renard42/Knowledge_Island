@@ -9,7 +9,7 @@ label russian:
 
     cat_russian "Приветствую тебя, путник!"
     show cat russian at left
-    
+
     menu:
 
           cat_russian "Какой путь выбираешь?"
@@ -26,15 +26,15 @@ label russian:
 
               jump rus_level2
 
-    label rus_level1:
+    label rus_level0:
 
         cat_russian "В сказках народная мудрость! Начнём!"
         return
 
 
-    label rus_level0:
+    label rus_level1:
 
-        cat_russian "Скорррей за мной!"
+        cat_russian "С песней жить веселей!"
         return
 
 
