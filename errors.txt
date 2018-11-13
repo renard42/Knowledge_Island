@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label level1 is defined twice, at
-  File "game/english.rpy", line 57 and
-  File "game/russian.rpy", line 29.
-
-The label level0 is defined twice, at
-  File "game/english.rpy", line 40 and
-  File "game/russian.rpy", line 35.
-
-The label level2 is defined twice, at
-  File "game/english.rpy", line 62 and
-  File "game/russian.rpy", line 41.
+File "game/russian.rpy", line 9: expected statement.
+    cat russian at_axy(ax=.5, ay=1.0)
+                      ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Nov 13 11:53:56 2018
+Tue Nov 13 12:37:17 2018
