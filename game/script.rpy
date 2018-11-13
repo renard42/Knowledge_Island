@@ -12,6 +12,7 @@ screen map:
 
         hotspot(233,344,366,376) action Return("english") alt "english"
         hotspot(817,130,967,167) action Return("geography") alt "geography"
+        hotspot(150,120,270,220) action Return("russian") alt "russian"
 
 label start:
         call screen map
@@ -23,3 +24,6 @@ label start:
 
         elif _return=="english":
             jump english
+
+        elif _return=="russian":
+            jump russian
