@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at
-  File "game/script.rpy", line 17 and
-  File "game/scripts_menu.rpy", line 110.
+The label level1 is defined twice, at
+  File "game/english.rpy", line 57 and
+  File "game/russian.rpy", line 29.
+
+The label level0 is defined twice, at
+  File "game/english.rpy", line 40 and
+  File "game/russian.rpy", line 35.
+
+The label level2 is defined twice, at
+  File "game/english.rpy", line 62 and
+  File "game/russian.rpy", line 41.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sat Nov 10 19:22:29 2018
+Tue Nov 13 11:53:56 2018
