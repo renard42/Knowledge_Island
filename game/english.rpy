@@ -52,14 +52,14 @@
         else:
             cat "Я победил, деталька моя!"
 
-        return
+        jump start
 
     label level1:
 
         cat "Среднее не значит скучное! Начнем! Мряв"
-        return
+        jump start
 
     label level2:
 
         cat "Ты смелый игрок! Вперед, мррр :3"
-        return
+        jump start
