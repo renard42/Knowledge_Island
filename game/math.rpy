@@ -13,4 +13,4 @@ label math:
     init python:
         print("!")
 
-    return
+    jump start

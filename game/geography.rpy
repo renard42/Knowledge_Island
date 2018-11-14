@@ -33,7 +33,7 @@ label geography:
         cat_geo "Ну что ж, начнем с простого, мррр"
 
 
-        return
+        jump start
 
     label level4:
         show cat geo at left with move
@@ -96,12 +96,9 @@ label geography:
         else:
             cat_geo "Я победил, деталька моя!"
 
-        return
+        jump start
 
     label level5:
 
         cat_geo "Ты смелый игрок! Вперед, мррр :3"
-        return
-
-
-  
+        jump start

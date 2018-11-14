@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/russian.rpy", line 9: expected statement.
-    cat russian at_axy(ax=.5, ay=1.0)
-                      ^
+The label start is defined twice, at
+  File "game/script.rpy", line 18 and
+  File "game/scripts_menu.rpy", line 110.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Nov 13 12:37:17 2018
+Wed Nov 14 11:59:39 2018

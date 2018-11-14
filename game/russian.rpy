@@ -29,18 +29,18 @@ label russian:
     label rus_level0:
 
         cat_russian "В сказках народная мудрость! Начнём!"
-        return
+        jump start
 
 
     label rus_level1:
 
         cat_russian "С песней жить веселей!"
-        return
+        jump start
 
 
     label rus_level2:
 
         cat_russian "Вперррёд через тернии к звёздам!"
-        return
+        jump start
 
-    return
+    jump start
