@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at
-  File "game/script.rpy", line 18 and
-  File "game/scripts_menu.rpy", line 110.
+The label level0_geo is defined twice, at
+  File "game/geography.rpy", line 33 and
+  File "game/lev0_geo.rpy", line 1.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 14 11:59:39 2018
+Sun Nov 18 00:58:19 2018

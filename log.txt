@@ -1,44 +1,70 @@
-Wed Nov 14 14:36:08 2018
+Sun Nov 18 04:01:54 2018
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
  
 
-Bootstrap to the start of init.init took 0.10s
+Bootstrap to the start of init.init took 0.11s
 Early init took 0.01s
-Loader init took 0.06s
-Loading error handling took 0.03s
-Loading script took 0.14s
+Loader init took 0.31s
+Loading error handling took 0.04s
+Loading script took 0.15s
 Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-!
-Running init code took 0.13s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Dump and make backups. took 0.10s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.02s
+
+Full traceback:
+  File "game/lev0_geo.rpy", line 17, in script
+    init python:
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/lev0_geo.rpy", line 18, in <module>
+    import numpy as np
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
+    exec code in mod.__dict__
+  File "python-packages/numpy/__init__.py", line 142, in <module>
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
+    exec code in mod.__dict__
+  File "python-packages/numpy/add_newdocs.py", line 13, in <module>
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
+    exec code in mod.__dict__
+  File "python-packages/numpy/lib/__init__.py", line 8, in <module>
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
+    exec code in mod.__dict__
+  File "python-packages/numpy/lib/type_check.py", line 11, in <module>
+  File "C:\Users\ÐÐ»ÐµÑÑ\Anaconda projects\ÐÐÐ¡\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
+    exec code in mod.__dict__
+  File "python-packages/numpy/core/__init__.py", line 26, in <module>
+ImportError: 
+Importing the multiarray numpy extension module failed.  Most
+likely you are trying to import a failed build of numpy.
+If you're working with a numpy git repo, try `git clean -xdf` (removes all
+files not under version control).  Otherwise reinstall numpy.
+
+Original error was: cannot import name multiarray
+
+
+While running game code:
+  File "game/lev0_geo.rpy", line 17, in script
+    init python:
+  File "game/lev0_geo.rpy", line 18, in <module>
+    import numpy as np
+ImportError: 
+Importing the multiarray numpy extension module failed.  Most
+likely you are trying to import a failed build of numpy.
+If you're working with a numpy git repo, try `git clean -xdf` (removes all
+files not under version control).  Otherwise reinstall numpy.
+
+Original error was: cannot import name multiarray
+
 DPI scale factor: 1.000000
-Creating interface object took 0.05s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.01s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.05s
+Interface start took 0.52s
 
 primary display bounds: (0, 0, 1366, 768)
 swap interval: 1 frames
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1148, 646) drawable=(1148, 646)
+Screen sizes: virtual=(1280, 720) physical=(1184, 666) drawable=(1184, 666)
 Vendor: 'Intel'
 Renderer: 'Intel(R) HD Graphics 4000'
 Version: '4.0.0 - Build 10.18.10.4358'
@@ -227,36 +253,4 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 1.42599987984s
-- Target is 5 frames in 0.333333333333 seconds.
-- Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.012000 seconds.
-- Frame drawn at 0.035000 seconds.
-- Frame drawn at 0.060000 seconds.
-- Frame drawn at 0.087000 seconds.
-- 0.087000 seconds to render 5 frames.
-
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1300, 745) drawable=(1300, 745)
-
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1148, 646) drawable=(1148, 646)
-
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(956, 646) drawable=(956, 646)
-
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(958, 745) drawable=(958, 745)
-
-primary display bounds: (0, 0, 1366, 768)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1300, 745) drawable=(1300, 745)
+Total time until interface ready: 1.70799994469s

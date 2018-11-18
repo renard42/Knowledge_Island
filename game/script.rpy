@@ -7,18 +7,17 @@ define cat = Character("Шерлок")
 
 screen map:
     imagemap:
-        idle "images/Map_clean.jpg"
+        idle "images/Map_clean.png"
         hover "images/Map_labels.png"
 
-        hotspot(748,234,1037,476) action Return("english") alt "english"
-        hotspot(440,10,753,214) action Return("geography") alt "geography"
-        hotspot(159,391,433,605) action Return("russian") alt "russian"
-        hotspot(103,44,408,322) action Return("math") alt "math"
-        hotspot(503,495,776,691) action Return("logic") alt "logic"
+        hotspot(287,5,442,240) action Return("english") alt "english"
+        hotspot(670,151,337,297) action Return("geography") alt "geography"
+        hotspot(23,195,435,332) action Return("russian") alt "russian"
+        hotspot(608,433,393,283) action Return("math") alt "math"
+        hotspot(154,434,442,278) action Return("logic") alt "logic"
 
 label start:
         call screen map
-
 
         if _return=="geography":
             jump geography
