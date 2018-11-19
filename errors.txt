@@ -3,8 +3,8 @@ errors listed below, and try again.
 
 
 The label level0_geo is defined twice, at
-  File "game/geography.rpy", line 33 and
-  File "game/lev0_geo.rpy", line 1.
+  File "game/lev0_geo.rpy", line 1 and
+  File "game/lev1_geo.rpy", line 1.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov 18 00:58:19 2018
+Mon Nov 19 18:39:59 2018
