@@ -1,15 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
+  File "game/lev0_geo.rpy", line 91, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
+  File "game/lev0_geo.rpy", line 91, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xca\xe0\xe7\xe0\xed\xfc' is not in list
+=======
   File "game/lev1_geo.rpy", line 23, in script
     if country in countries_dict[country_new].values():
   File "game/lev1_geo.rpy", line 23, in <module>
     if country in countries_dict[country_new].values():
 AttributeError: 'unicode' object has no attribute 'values'
+>>>>>>> master
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
+  File "game/lev0_geo.rpy", line 91, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/lev0_geo.rpy", line 91, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xca\xe0\xe7\xe0\xed\xfc' is not in list
+=======
   File "game/lev1_geo.rpy", line 23, in script
     if country in countries_dict[country_new].values():
   File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1760, in execute
@@ -21,8 +40,13 @@ Full traceback:
   File "game/lev1_geo.rpy", line 23, in <module>
     if country in countries_dict[country_new].values():
 AttributeError: 'unicode' object has no attribute 'values'
+>>>>>>> master
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
+<<<<<<< HEAD
+Tue Nov 20 15:38:34 2018
+=======
 Mon Nov 19 17:54:48 2018
+>>>>>>> master

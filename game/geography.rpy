@@ -10,6 +10,7 @@ label geography:
 
 
     show cat geo at right with move
+    $ score = []
 
     label geo_level:
 
