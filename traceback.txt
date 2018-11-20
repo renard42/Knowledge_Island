@@ -1,55 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/lev0_geo.rpy", line 17, in script
-    init python:
-  File "game/lev0_geo.rpy", line 18, in <module>
-    import numpy as np
-ImportError: 
-Importing the multiarray numpy extension module failed.  Most
-likely you are trying to import a failed build of numpy.
-If you're working with a numpy git repo, try `git clean -xdf` (removes all
-files not under version control).  Otherwise reinstall numpy.
-
-Original error was: cannot import name multiarray
-
+  File "game/lev0_geo.rpy", line 91, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
+  File "game/lev0_geo.rpy", line 91, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xca\xe0\xe7\xe0\xed\xfc' is not in list
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/lev0_geo.rpy", line 17, in script
-    init python:
+  File "game/lev0_geo.rpy", line 91, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/lev0_geo.rpy", line 18, in <module>
-    import numpy as np
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
-    exec code in mod.__dict__
-  File "python-packages/numpy/__init__.py", line 142, in <module>
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
-    exec code in mod.__dict__
-  File "python-packages/numpy/add_newdocs.py", line 13, in <module>
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
-    exec code in mod.__dict__
-  File "python-packages/numpy/lib/__init__.py", line 8, in <module>
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
-    exec code in mod.__dict__
-  File "python-packages/numpy/lib/type_check.py", line 11, in <module>
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\loader.py", line 744, in load_module
-    exec code in mod.__dict__
-  File "python-packages/numpy/core/__init__.py", line 26, in <module>
-ImportError: 
-Importing the multiarray numpy extension module failed.  Most
-likely you are trying to import a failed build of numpy.
-If you're working with a numpy git repo, try `git clean -xdf` (removes all
-files not under version control).  Otherwise reinstall numpy.
-
-Original error was: cannot import name multiarray
-
+  File "game/lev0_geo.rpy", line 91, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xca\xe0\xe7\xe0\xed\xfc' is not in list
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
- 
-Sun Nov 18 04:01:55 2018
+KnowledgeIsland 1.0
+Tue Nov 20 15:38:34 2018

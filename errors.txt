@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label level0_geo is defined twice, at
-  File "game/geography.rpy", line 33 and
-  File "game/lev0_geo.rpy", line 1.
+File "game/lev0_geo.rpy", line 63: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a ' at the end of the first line.)
+                            $ cat_say = ['Я называю город: '+city, 'Тебе на +letter]
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Nov 18 00:58:19 2018
+Tue Nov 20 14:40:50 2018
