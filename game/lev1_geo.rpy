@@ -1,64 +1,52 @@
-define cat_geo = Character("Колумб")
-
 label level1_geo:
+
+    menu:
+        cat_geo "Хочешь поиграть в ассоциации?"
+
+        "Поехали!":
+            jump game_pics
+
+        "Может другое?":
+            jump geo_level
+
+label game_pics:
+    init:
+        $ num_err = 3
+        $ countries = ["india", "canada", "australia", "usa", "italy", "russia", "egypt", "japan", "uk", "france"]
+        $ random_countries = renpy.random.sample(countries, 5)
+        $ i = 0
+        $ country_new = ''
+        $ countries_dict = {"india": "индия", "canada": "канада", "australia": "австралия", "france": "франция", "usa": ["америка", "сша"], "italy": "италия", "russia": ["россия", "рф", "российская федерация"], "egypt": "египет", "japan": "япония", "uk": ["англия", "британия", "великобритания"]}
+
     show cat geo at left with move
     cat_geo "Среднее не значит скучное! Начнем! Мряв"
+    while i<5:
+        $ country_new = random_countries[i]
+        init:
+            image num1 = "images/[country_new]/num1.png"
+            image num2 = "images/[country_new]/num2.png"
+            image num3 = "images/[country_new]/num3.png"
+            image num4 = "images/[country_new]/num4.png"
+        show num1 at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
+        show num2 at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
+        show num3 at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
+        show num4 at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
+        $ country = str(renpy.input("Угадай стрррррану:").lower())
+        if country in countries_dict[country_new]:
+            if i < 4:
+                cat_geo "Молодец! Давай еще?"
+            else:
+                cat_geo "Уррррррраа! Ты прошел уровень!"
 
-    show ben at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    show tea at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show monarchy at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show stonehedge at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    $ country = str(renpy.input("Угадай стрррррану:"))
-    if country == "Великобритания" or country == "Англия" :
-        cat_geo "Ты угадал! Давай еще?"
-
-    else:
-        cat_geo "Я победил, деталька моя!"
-
-
-    show boot at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    show pasta at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show piza at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show pizza at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    $ country = str(renpy.input("Угадай стрррррану:"))
-    if country == "Италия":
-        cat_geo "Ты угадал! Идем дальше?"
-
-    else:
-        cat_geo "Я победил, деталька моя!"
-
-
-    show balalaika at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    show borsch at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show snowflake at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show kremlin at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    $ country = str(renpy.input("Угадай стрррррану:"))
-    if country == "Россия":
-        cat_geo "Ты угадал! Идем дальше?"
-
-    else:
-        cat_geo "Я победил, деталька моя!"
-
-    show sun at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    show samurai at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show sakura at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show robot at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    $ country = str(renpy.input("Угадай стрррррану:"))
-    if country == "Япония":
-        cat_geo "Ты угадал! Идем дальше?"
-
-    else:
-        cat_geo "Я победил, деталька моя!"
-
-    show pyramid at Position(xpos = 0.45, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    show pharaoh at Position(xpos = 0.45, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show kitty at Position(xpos = 0.65, xanchor=0.3, ypos=0.55, yanchor=0.5)
-    show camel at Position(xpos = 0.65, xanchor=0.3, ypos=0.2, yanchor=0.5)
-    $ country = str(renpy.input("Угадай стрррррану:"))
-    if country == "Египет":
-        cat_geo "Ты прошел урррровень! Молодец!"
-
-    else:
-        cat_geo "Я победил, деталька моя!"
+        else:
+            $ num_err -= 1
+            if num_err==2:
+                cat_geo "Непррррравильно! У тебя еще [num_err] жизни"
+            elif num_err==1:
+                cat_geo "Ну как же так? У тебя еще [num_err] жизнь"
+            else:
+                cat_geo "Я победил! Деталька моя"
+                jump geo_level
+        $ i += 1
 
     jump start
