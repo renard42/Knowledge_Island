@@ -1,9 +1,14 @@
 ﻿I'm sorry, but errors were detected in your script. Please correct the
 errors listed below, and try again.
 
-The label level0_geo is defined twice, at
-  File "game/lev0_geo.rpy", line 1 and
-  File "game/lev1_geo.rpy", line 1.
+
+File "game/lev0_geo.rpy", line 61: expected statement.
+    try:
+       ^
+
+File "game/lev0_geo.rpy", line 71: expected statement.
+    except:
+          ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Mon Nov 19 18:39:59 2018
+Tue Nov 20 23:20:08 2018

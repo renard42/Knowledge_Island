@@ -1,12 +1,13 @@
 init python:
     import random
     cities = renpy.file('/codes/cities/cities.txt').read()
-    cities_db = [line.split(',')[0] for line in cities.split('\n')][1:]
+    cities_db = [line.split(',')[0] for line in cities.split('\n')]
     cities_info = {}
-    for line in cities.split('\n')[1:101]:
+    for line in cities.split('\n')[:101]:
         if len(line)>0:
             cities_info[line.split(',')[0]] = ','.join(line.split(',')[2:])
     cities_to_use = list(cities_info.keys())
+    random.shuffle(cities_to_use)
     used_cities = []
 
 
@@ -26,7 +27,8 @@ label level0_geo:
 
         $ player = False
         cat_geo "Прррекрасно, мяу! Тогда начнем!"
-        cat_geo "Но сначала послушай правила игры:"
+        cat_geo "Но сначала послушай правила"
+        show cat geo at left with move
 
         label rules:
             $ rules = renpy.file('/codes/cities/rules.txt').read().split('\n')
@@ -46,6 +48,8 @@ label level0_geo:
                     jump rules
 
             label finally_game:
+                $ letter = False
+                $ city = False
                 if player == False:
                     cat_geo "Отлично! Давай я начну, чтобы тебе было понятнее"
                 else:
@@ -54,9 +58,21 @@ label level0_geo:
                 $ count = 0
                 $ life = 3
 
-                while count <=10:
+                while count<20:
                     if player == False:
-                        $ city = random.choice(cities_to_use)
+                        if letter:
+                            $ k = 0
+                            while k<len(cities_to_use):
+                                if letter[0] == cities_to_use[k][0].upper() or letter[1] == cities_to_use[k][0].upper():
+                                    $ city = cities_to_use[k]
+                                    $ k=len(cities_to_use)
+                                $ k+=1
+                            if not city:
+                                cat_geo "Я не знаю больше городов на [letter]."
+                                jump geo_win
+                        else:
+                            $ city = random.choice(cities_to_use).title()
+
                         $ del cities_to_use[cities_to_use.index(str(city))]
                         $ used_cities.append(city)
                         $ letter = [city[-1].upper(), city[-2].upper()]
@@ -64,17 +80,19 @@ label level0_geo:
                         cat_geo "Я называю город: [city]. Тебе на [letter[0]] или [letter[1]]."
                         $ player=True
                     elif player == True:
-                        $ city = renpy.input("Назови город: ")
+                        $ city = renpy.input("Назови город: ").title()
                         while city.title() not in cities_db and life!=0:
                             $ life -=1
                             cat_geo "Такого города [city] нет! У тебя осталось [life] попытки"
-                            $ city = renpy.input("Назови город: ")
+                            $ city = renpy.input("Назови город: ").title()
                         if letter:
                             while (letter[0]!=city[0].upper() and letter[1]!=city[0].upper()) and life!=0:
                                 $ life -=1
                                 cat_geo "Твой город [city] начинается на неправильную букву! У тебя осталось [life] попытки"
                                 $ city = renpy.input("Назови город: ")
-
+                        while city in used_cities:
+                            cat_geo "Город [city] уже был. Назови другой"
+                            $ city = renpy.input("Назови город: ")
 
                         if life==0:
                             cat_geo "Ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова!"
@@ -87,27 +105,30 @@ label level0_geo:
                                 "Нет, я лучше еще потренируюсь и приду":
                                     cat_geo "До встречи, я буду тебя ждать!"
                                     jump start
-
-                        $ del cities_to_use[cities_to_use.index(str(city))]
+                        init python:
+                            try:
+                                del cities_to_use[cities_to_use.index(str(city))]
+                            except:
+                                pass
+                        $ letter = [city[-1].upper(), city[-2].upper()]
                         $ used_cities.append(city)
                         $ player=False
 
 
                     $ count+=1
 
-                cat_geo "Ты победил! :3"
-                cat_geo "Молодец! Я дарю тебе парус для твоего корабля!"
-                $ score.append('level0')
+                label geo_win:
 
-                menu:
-                    cat_geo "Хочешь сыграть еще раз?"
+                    cat_geo "Ты победил! :3"
+                    cat_geo "Молодец! Я дарю тебе парус для твоего корабля!"
+                    $ score.append('level0')
 
-                    "Хочу! Ты первый!":
-                        $ player = False
-                        jump finally_game
-                    "Хочу, только я называю первым!":
-                        $ player = True
-                        jump finally_game
-                    "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                        cat_geo "До встречи, умный ребенок! заходит еще!"
-                        jump start
+                    menu:
+                        cat_geo "Хочешь сыграть еще раз?"
+
+                        "Хочу!":
+                            $ player = False
+                            jump finally_game
+                        "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                            cat_geo "До встречи! Заходи еще!"
+                            jump start
