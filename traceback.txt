@@ -1,28 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/cities_info.rpy", line 12, in script
-    while info[ind]:
-  File "game/cities_info.rpy", line 12, in <module>
-    while info[ind]:
-IndexError: list index out of range
+  File "game/geography.rpy", line 31, in script
+    jump level2_geo
+ScriptError: could not find label 'level2_geo'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/cities_info.rpy", line 12, in script
-    while info[ind]:
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 1703, in execute
-    if renpy.python.py_eval(self.condition):
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1944, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/cities_info.rpy", line 12, in <module>
-    while info[ind]:
-IndexError: list index out of range
+  File "game/geography.rpy", line 31, in script
+    jump level2_geo
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'level2_geo'.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Wed Nov 21 10:19:56 2018
+Wed Nov 21 11:20:43 2018
