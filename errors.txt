@@ -2,9 +2,15 @@
 errors listed below, and try again.
 
 
-The label skip_word is defined twice, at
-  File "game/cities_info.rpy", line 11 and
-  File "game/lev0_geo.rpy", line 67.
+File "game/cities_info.rpy", line 8: invalid syntax
+    image city_pic = "images/cities/[p1]"
+                  ^
+    
+
+File "game/cities_info.rpy", line 9: invalid syntax
+    image gerb = "images/cities/[p2]"
+              ^
+    
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 21 03:05:59 2018
+Wed Nov 21 09:59:43 2018

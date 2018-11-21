@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/lev0_geo.rpy", line 86, in script
-    $ del cities_to_use[cities_to_use.index(str(city))]
-  File "game/lev0_geo.rpy", line 86, in <module>
-    $ del cities_to_use[cities_to_use.index(str(city))]
-ValueError: '\xd0\xe0\xed\xe5\xe5 \xcd\xe0 \xcc\xe5\xf1\xf2\xe5 \xdd\xed\xe3\xe5\xeb\xfc\xf1\xe0 \xc1\xfb\xeb \xc3\xee\xf0\xee\xe4 \xd1\xe0\xf0\xe0\xf2\xee\xe2' is not in list
+  File "game/cities_info.rpy", line 12, in script
+    while info[ind]:
+  File "game/cities_info.rpy", line 12, in <module>
+    while info[ind]:
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/lev0_geo.rpy", line 86, in script
-    $ del cities_to_use[cities_to_use.index(str(city))]
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/lev0_geo.rpy", line 86, in <module>
-    $ del cities_to_use[cities_to_use.index(str(city))]
-ValueError: '\xd0\xe0\xed\xe5\xe5 \xcd\xe0 \xcc\xe5\xf1\xf2\xe5 \xdd\xed\xe3\xe5\xeb\xfc\xf1\xe0 \xc1\xfb\xeb \xc3\xee\xf0\xee\xe4 \xd1\xe0\xf0\xe0\xf2\xee\xe2' is not in list
+  File "game/cities_info.rpy", line 12, in script
+    while info[ind]:
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 1703, in execute
+    if renpy.python.py_eval(self.condition):
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/cities_info.rpy", line 12, in <module>
+    while info[ind]:
+IndexError: list index out of range
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Wed Nov 21 02:54:16 2018
+Wed Nov 21 10:19:56 2018

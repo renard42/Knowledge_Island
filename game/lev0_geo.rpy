@@ -58,7 +58,7 @@ label level0_geo:
             $ count = 0
             $ life = 3
             screen game_buttons:
-                vbox xalign 1.0 yalign 1.0:
+                hbox xalign 1.0 yalign 1.0:
                     imagebutton auto ("owl_help_%s.png") action Jump("cities_help")
                     #textbutton "{b}{color=#6699FF}Не знаю :({/b}{/color}" action Jump("skip_word")
             show screen game_buttons
@@ -137,4 +137,7 @@ label level0_geo:
                         jump finally_game
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat_geo "До встречи! Заходи еще!"
+                        hide bg geo
+                        hide cat geo
+                        hide screen game_buttons
                         jump start
