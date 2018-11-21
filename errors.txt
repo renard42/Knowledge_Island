@@ -1,9 +1,10 @@
 ﻿I'm sorry, but errors were detected in your script. Please correct the
 errors listed below, and try again.
 
-The label level0_geo is defined twice, at
-  File "game/lev0_geo.rpy", line 1 and
-  File "game/lev1_geo.rpy", line 1.
+
+The label skip_word is defined twice, at
+  File "game/cities_info.rpy", line 11 and
+  File "game/lev0_geo.rpy", line 67.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Mon Nov 19 18:39:59 2018
+Wed Nov 21 03:05:59 2018
