@@ -1,10 +1,19 @@
 label cities_help:
-    $ info = cities_info[city][:-1].split('.')
+    $ info = cities_info[city][:-1].split('. ')
     $ player = True
     $ ind =0
-    while info[ind]:
+    $ p1 = city +'.png'
+    $ p2 = city + '_герб.png'
+    init:
+        image city_pic = "images/cities/[p1]"
+        image gerb = "images/cities/[p2]"
+    show city_pic at Position(xalign=0.8, yalign=0.2)
+    show gerb at Position(xalign=0.85, yalign=0.2)
+    while ind<len(info):
         $ renpy.say(owl,info[ind])
         $ ind+=1
+    hide city_pic
+    hide gerb
 
     jump continue_game
 
