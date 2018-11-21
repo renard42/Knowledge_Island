@@ -1,42 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After loading the script.
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+While running game code:
+  File "game/lev0_geo.rpy", line 86, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
+  File "game/lev0_geo.rpy", line 86, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xd0\xe0\xed\xe5\xe5 \xcd\xe0 \xcc\xe5\xf1\xf2\xe5 \xdd\xed\xe3\xe5\xeb\xfc\xf1\xe0 \xc1\xfb\xeb \xc3\xee\xf0\xee\xe4 \xd1\xe0\xf0\xe0\xf2\xee\xe2' is not in list
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\main.py", line 415, in main
-    if renpy.parser.report_parse_errors():
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\parser.py", line 2787, in report_parse_errors
-    renpy.display.error.report_parse_errors(full_text, error_fn)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\error.py", line 187, in report_parse_errors
-    error_fn=error_fn,
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\game.py", line 281, in invoke_in_new_context
-    return callable(*args, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\error.py", line 45, in call_exception_screen
-    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 3340, in interact_core
-    self.quit_event()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2366, in quit_event
-    renpy.exports.take_screenshot()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\exports.py", line 1574, in take_screenshot
-    renpy.game.interface.take_screenshot(scale, background=background)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2112, in take_screenshot
-    surf = renpy.display.scale.smoothscale(surf, scale)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\scale.py", line 95, in real_smoothscale
-    dest = pgrender.surface_unscaled(size, src)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\pgrender.py", line 118, in surface
-    surf = Surface((width + 4, height + 4), 0, sample)
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+  File "game/lev0_geo.rpy", line 86, in script
+    $ del cities_to_use[cities_to_use.index(str(city))]
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/lev0_geo.rpy", line 86, in <module>
+    $ del cities_to_use[cities_to_use.index(str(city))]
+ValueError: '\xd0\xe0\xed\xe5\xe5 \xcd\xe0 \xcc\xe5\xf1\xf2\xe5 \xdd\xed\xe3\xe5\xeb\xfc\xf1\xe0 \xc1\xfb\xeb \xc3\xee\xf0\xee\xe4 \xd1\xe0\xf0\xe0\xf2\xee\xe2' is not in list
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
- 
-Tue Nov 20 23:20:12 2018
+KnowledgeIsland 1.0
+Wed Nov 21 02:54:16 2018

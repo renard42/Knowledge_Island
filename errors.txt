@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lev0_geo.rpy", line 61: expected statement.
-    try:
-       ^
-
-File "game/lev0_geo.rpy", line 71: expected statement.
-    except:
-          ^
+The label skip_word is defined twice, at
+  File "game/cities_info.rpy", line 11 and
+  File "game/lev0_geo.rpy", line 67.
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Nov 20 23:20:08 2018
+Wed Nov 21 03:05:59 2018
