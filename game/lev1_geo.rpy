@@ -12,10 +12,10 @@ label level1_geo:
     label game_pics:
         init:
             $ num_err = 3
-            $ countries = ["india", "canada", "australia", "usa", "italy", "russia", "egypt", "japan", "uk", "france"]
+            $ countries = ["ukraine", "sweden", "iceland", "china", "india", "canada", "australia", "usa", "italy", "russia", "egypt", "japan", "uk", "france"]
             $ i = 0
             $ country_new = ''
-            $ countries_dict = {"india": "индия", "canada": "канада", "australia": "австралия", "france": "франция", "usa": ["америка", "сша"], "italy": "италия", "russia": ["россия", "рф", "российская федерация"], "egypt": "египет", "japan": "япония", "uk": ["англия", "британия", "великобритания"]}
+            $ countries_dict = {"ukraine": "украина", "sweden": "швеция", "iceland": "исландия", "china": ["китай", "кнр"], "india": "индия", "canada": "канада", "australia": "австралия", "france": "франция", "usa": ["америка", "сша"], "italy": "италия", "russia": ["россия", "рф", "российская федерация"], "egypt": "египет", "japan": "япония", "uk": ["англия", "британия", "великобритания"]}
 
         show cat geo at left with move
         cat_geo "Среднее не значит скучное! Начнем! Мряв"
