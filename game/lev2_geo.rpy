@@ -9,6 +9,7 @@ init python:
     final = {el[0]:el[1] for el in new_s[:-1]}
 
     countries_to_use = list(final.keys())
+    used = []
     info=[]
     for co in countries_to_use:
         info.append(final[co])
@@ -31,13 +32,13 @@ label level2_geo:
     label game_countries:
 
         $ player = False
-        cat_geo "Отлично! Давай начнём!"
 
         $ i = 0
         $ life = 3
 
-        while i<=9:
-            $ country_new = random.choice(countries_to_use)
+        while i<=4:
+            $ country_new = random.choice(countries_to_use - used)
+            $ used.append(country_new)
             init:
                 image c = "images/[country_new].png"
             $ country_info = final[country_new].split('.')[:-1]
@@ -46,7 +47,7 @@ label level2_geo:
                 zoom 3.0
             $ country = renpy.input("Угадай стрррррану:").title()
             if country == country_new:
-                if i < 9:
+                if i < 4:
                     cat_geo "Молодец! Вот тебе немного информации:"
                     $ n = 0
                     while n<len(country_info):
@@ -64,11 +65,7 @@ label level2_geo:
                     menu:
                         cat_geo "Хочешь сыграть еще раз?"
 
-                        "Хочу! Ты первый!":
-                            $ player = False
-                            jump finally_game
-                        "Хочу, только я называю первым!":
-                            $ player = True
+                        "Хочу! Давай повторим!":
                             jump finally_game
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                             cat_geo "До встречи, умный ребенок! заходит еще!"
@@ -81,13 +78,12 @@ label level2_geo:
                 elif num_err==1:
                     cat_geo "Ну как же так? У тебя еще [num_err] жизнь"
                 else:
-                    cat_geo "Ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова!"
                     menu:
-                        cat_geo "Или может, хочешь попробовать еще раз?"
+                        cat_geo "Ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова! Или может, хочешь попробовать еще раз?"
 
                         "Да, я готов!":
                             $ player = False
-                            jump finally_game
+                            jump game_countries
                         "Нет, я лучше еще потренируюсь и приду":
                             cat_geo "До встречи, я буду тебя ждать!"
                             jump start
