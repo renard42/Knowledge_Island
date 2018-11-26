@@ -126,7 +126,7 @@ label level0_geo:
             label geo_win:
                 hide game_buttons
                 cat_geo "Ты победил! :3"
-                cat_geo "Молодец! Я дарю тебе парус для твоего корабля!"
+                cat_geo "Молодец! Идем дальше?"
                 $ score.append('level0')
 
                 menu:
