@@ -37,7 +37,7 @@ label level2_geo:
         $ life = 3
 
         while i<=4:
-            $ country_new = random.choice(countries_to_use - used)
+            $ country_new = random.choice(list(set(countries_to_use) - set(used)))
             $ used.append(country_new)
             init:
                 image c = "images/[country_new].png"
@@ -74,9 +74,9 @@ label level2_geo:
             else:
                 $ num_err -= 1
                 if num_err==2:
-                    cat_geo "Непррррравильно! У тебя еще [num_err] жизни"
+                    cat_geo "Непррррравильно! Это [country_new]. У тебя еще [num_err] жизни"
                 elif num_err==1:
-                    cat_geo "Ну как же так? У тебя еще [num_err] жизнь"
+                    cat_geo "Ну как же так? Это [country_new]. У тебя осталась всего [num_err] жизнь"
                 else:
                     menu:
                         cat_geo "Ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова! Или может, хочешь попробовать еще раз?"
@@ -84,6 +84,7 @@ label level2_geo:
                         "Да, я готов!":
                             $ player = False
                             jump game_countries
+                            num_err = 3
                         "Нет, я лучше еще потренируюсь и приду":
                             cat_geo "До встречи, я буду тебя ждать!"
                             jump start

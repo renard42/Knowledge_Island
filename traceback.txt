@@ -1,22 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/geography.rpy", line 31, in script
-    jump level2_geo
-ScriptError: could not find label 'level2_geo'.
+  File "game/lev2_geo.rpy", line 40, in script
+    $ country_new = random.choice(set(countries_to_use) - set(used))
+  File "game/lev2_geo.rpy", line 40, in <module>
+    $ country_new = random.choice(set(countries_to_use) - set(used))
+TypeError: 'RevertableSet' object does not support indexing
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/geography.rpy", line 31, in script
-    jump level2_geo
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'level2_geo'.
+  File "game/lev2_geo.rpy", line 40, in script
+    $ country_new = random.choice(set(countries_to_use) - set(used))
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/lev2_geo.rpy", line 40, in <module>
+    $ country_new = random.choice(set(countries_to_use) - set(used))
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/random.py", line 275, in choice
+TypeError: 'RevertableSet' object does not support indexing
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Wed Nov 21 11:20:43 2018
+Tue Nov 27 00:10:25 2018
