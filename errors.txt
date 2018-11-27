@@ -2,15 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/cities_info.rpy", line 8: invalid syntax
-    image city_pic = "images/cities/[p1]"
-                  ^
-    
-
-File "game/cities_info.rpy", line 9: invalid syntax
-    image gerb = "images/cities/[p2]"
-              ^
+File "game/level2_eng.rpy", line 59: invalid syntax
+    image img = "images/eng_lev2/[w].png"
+             ^
     
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 21 09:59:43 2018
+Wed Nov 28 00:43:12 2018
