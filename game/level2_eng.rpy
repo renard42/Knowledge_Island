@@ -24,7 +24,7 @@ label level2_eng:
                     $ text_var = each_b["b_value"]
                     $ i = each_b["b_number"] - 1
                     button:
-                        text '[text_var]{size=18}.{/size}' size 30 align (0.5, 0.55) color "#000"
+                        text '[text_var]{size=18}{/size}' size 30 align (0.5, 0.55) color "#000"
                         xminimum 100 xmaximum 100
                         yminimum 100 ymaximum 100
                         xpos each_b["b_x_pos"]
@@ -54,10 +54,11 @@ label level2_eng:
         $ buttons_values = []
 
         $ word = random.choice(words)[:-1]
-        $ w = [i for i in word]
+        $ w = [i.upper() for i in word]
+        $ word_img = word.replace(' ', '_')
 
         init:
-            image img = "images/eng_lev2/[word].png"
+            image img = "images/eng_lev2/[word_img].png"
 
         show img at Position(xalign = 1.0, yalign=1.0)
         python:
@@ -67,9 +68,11 @@ label level2_eng:
         python:
             for i in range (0, len(buttons_values) ):
                 numbers_buttons.append ( {"b_number":i, "b_value":buttons_values[i], "b_x_pos":(renpy.random.randint (10, 70))*10, "b_y_pos":(renpy.random.randint (15, 50))*10, "b_to_show":True} )
-                if i%2!=0:
-                    numbers_buttons[i]["b_x_pos"]+=10
-                    numbers_buttons[i]["b_y_pos"]+=10
+
+            for num, dic in enumerate(numbers_buttons[:-1]):
+                if dic["b_x_pos"] - numbers_buttons[num+1]["b_x_pos"] < 10:
+                    numbers_buttons[num+1]["b_x_pos"] +=50
+
         $ game_timer = 30
 
         show screen numbers_scr
@@ -86,11 +89,17 @@ label level2_eng:
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
-            "Ты проиграл :( Попробуй еще раз!"
-            jump numbers_game
+            menu:
+                cat "Ты проиграл :( Попробуешь еще раз?"
+                "Да, давай еще раз!":
+                    jump numbers_game
+                "Лучше еще потренируюсь":
+                    cat "Возвращайся!"
+                    jump english
 
         if result == "win":
             hide screen numbers_scr
+            hide img
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
@@ -103,13 +112,11 @@ label level2_eng:
             else:
                 cat "Молодец, ты выиграл! Идем дальше?"
                 menu:
-                    cat_geo "Хочешь сыграть еще раз?"
+                    cat "Хочешь сыграть еще раз?"
 
                     "Хочу!":
                         $ count = 0
                         jump numbers_game
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                        cat_geo "До встречи! Заходи еще!"
+                        cat "До встречи! Заходи еще!"
                         jump start
-
-                jump english

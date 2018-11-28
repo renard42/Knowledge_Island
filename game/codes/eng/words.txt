@@ -3,7 +3,7 @@ door
 sofa
 table
 chair
-arm-chair
+armchair
 clock
 telephone
 computer
