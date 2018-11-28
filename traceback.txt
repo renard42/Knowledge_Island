@@ -1,74 +1,50 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'images/eng_lev2/scarf.png'>:
-  File "game/level2_eng.rpy", line 76, in script
+While running game code:
+  File "game/level2_eng.rpy", line 78, in script
     $ result = ui.interact()
-  File "game/level2_eng.rpy", line 76, in <module>
+  File "game/level2_eng.rpy", line 78, in <module>
     $ result = ui.interact()
-Exception: Could not load image u'images/eng_lev2/scarf.png': error('Unsupported image format',)
+Exception: DynamicImage u'images/eng_lev2/[word].png': could not find image. (u'images/eng_lev2/.png')
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/level2_eng.rpy", line 76, in script
+  File "game/level2_eng.rpy", line 78, in script
     $ result = ui.interact()
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/level2_eng.rpy", line 76, in <module>
+  File "game/level2_eng.rpy", line 78, in <module>
     $ result = ui.interact()
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 3148, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2065, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 487, in renpy.display.render.render_screen
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\layout.py", line 719, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\layout.py", line 333, in render
-    surf = render(self.child, width, height, st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 497, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 306, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 709, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 306, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 147, in renpy.display.render.render
-  File "render.pyx", line 235, in renpy.display.render.render
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\im.py", line 580, in render
-    return cache.get(self, render=True)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\im.py", line 266, in get
-    surf = image.load()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\im.py", line 625, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\pgrender.py", line 162, in load_image
-    raise Exception("Could not load image {!r}: {!r}".format(filename, e))
-Exception: Could not load image u'images/eng_lev2/scarf.png': error('Unsupported image format',)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 511, in visit_all
+    for d in self.visit():
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 720, in visit
+    self.find_target()
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 634, in find_target
+    raise Exception(error)
+Exception: DynamicImage u'images/eng_lev2/[word].png': could not find image. (u'images/eng_lev2/.png')
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Wed Nov 28 01:17:44 2018
+Wed Nov 28 12:17:14 2018
