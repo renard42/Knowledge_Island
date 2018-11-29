@@ -1,29 +1,18 @@
 define cat_eng = Character("Шерлок")
 
-# Show a background. This uses a placeholder by default, but you can
-# add a file (named either "bg room.png" or "bg room.jpg") to the
-# images directory to show it.
 label english:
 
+scene bg england
+show cat england
 
-    scene bg england
+cat "Добро пожаловать!"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+cat_eng "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
 
-    show cat england
+cat_eng "С чего начнем?"
 
-    # These display lines of dialogue.
-
-    cat_eng "Добро пожаловать!"
-
-    cat_eng "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
-
-    cat_eng "С чего начнем?"
-
-    show cat england at left with move
-    label eng_level:
+show cat england at left with move
+label eng_level:
         menu:
 
             cat_eng "Какой уровень пррредпочитаешь?"
