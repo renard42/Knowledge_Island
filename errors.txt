@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/level2_eng.rpy", line 59: invalid syntax
-    image img = "images/eng_lev2/[w].png"
-             ^
-    
+File "game/english.rpy", line 15: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    label eng_level:
+    ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 28 00:43:12 2018
+Thu Nov 29 21:57:10 2018
