@@ -118,6 +118,18 @@ label level1_eng:
                         cat_eng "This is a [new_animal]!"
                         cat_eng "Нажми на сову снизу и посмотри на перевод. Должно стать понятнее!"
                         hide given_animal
+                        cat_eng "Я победил! Деталька моя"
+                        menu:
+                            cat_eng "Хочешь сыграть еще раз?"
+
+                            "Конечно!":
+                                jump game_animal
+                            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                                cat_eng "До встречи! Заходи еще!"
+                                hide bg england
+                                hide cat england
+                                hide screen game_eng_buttons
+                                jump start
 
                 label continue_animal:
                     $ num = animal_life
@@ -127,8 +139,6 @@ label level1_eng:
             if i == k:
                 if animal_life>0:
                     cat_eng "Ты победил!"
-                else:
-                    cat_eng "Я победил! Деталька моя"
                 menu:
                     cat_eng "Хочешь сыграть еще раз?"
 

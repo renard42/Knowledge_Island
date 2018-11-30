@@ -1,50 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/level2_eng.rpy", line 81, in script
-    $ result = ui.interact()
-  File "game/level2_eng.rpy", line 81, in <module>
-    $ result = ui.interact()
-Exception: DynamicImage u'images/eng_lev2/[word_img].png': could not find image. (u'images/eng_lev2/armchair.png')
+  File "game/english.rpy", line 22, in script
+    jump level0_eng
+ScriptError: could not find label 'level0_eng'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/level2_eng.rpy", line 81, in script
-    $ result = ui.interact()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/level2_eng.rpy", line 81, in <module>
-    $ result = ui.interact()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\core.py", line 511, in visit_all
-    for d in self.visit():
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 720, in visit
-    self.find_target()
-  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\display\image.py", line 634, in find_target
-    raise Exception(error)
-Exception: DynamicImage u'images/eng_lev2/[word_img].png': could not find image. (u'images/eng_lev2/armchair.png')
+  File "game/english.rpy", line 22, in script
+    jump level0_eng
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'level0_eng'.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Thu Nov 29 22:00:15 2018
+Fri Nov 30 16:55:20 2018
