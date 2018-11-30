@@ -1,4 +1,6 @@
 define owl_eng = Character("Owl", what_ysize = gui.textbox_height)
+define success = "music/success.wav"
+define fail = "music/fail.wav"
 label level1_eng:
     cat_eng "Я уверен, что ты справишься!"
     menu:
@@ -84,6 +86,7 @@ label level1_eng:
                 label continue_animals:
                 $ user_animal = str(renpy.input("Как называется это животное на английском?").lower())
                 if user_animal==new_animal:
+                    $ renpy.music.play(success, loop=False)
                     show given_animal at Position(xpos = 0.60, xanchor=0.3, ypos=0.2, yanchor=0.2)
                     if i<end:
                         cat_eng "Молодец!"
@@ -102,6 +105,7 @@ label level1_eng:
                                 hide screen game_eng_buttons
                                 jump start
                 else:
+                    $ renpy.music.play(fail, loop=False)
                     show given_animal at Position(xpos = 0.60, xanchor=0.3, ypos=0.2, yanchor=0.2)
                     $ animal_life -= 1
                     if animal_life==2:
@@ -114,16 +118,27 @@ label level1_eng:
                         cat_eng "This is a [new_animal]!"
                         cat_eng "Нажми на сову снизу и посмотри на перевод. Должно стать понятнее!"
                         hide given_animal
+                        cat_eng "Я победил! Деталька моя"
+                        menu:
+                            cat_eng "Хочешь сыграть еще раз?"
+
+                            "Конечно!":
+                                jump game_animal
+                            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                                cat_eng "До встречи! Заходи еще!"
+                                hide bg england
+                                hide cat england
+                                hide screen game_eng_buttons
+                                jump start
 
                 label continue_animal:
                     $ num = animal_life
                 hide given_animal
                 $ i += 1
+
             if i == k:
                 if animal_life>0:
                     cat_eng "Ты победил!"
-                else:
-                    cat_eng "Я победил! Деталька моя"
                 menu:
                     cat_eng "Хочешь сыграть еще раз?"
 
