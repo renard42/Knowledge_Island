@@ -2,15 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/cities_info.rpy", line 8: invalid syntax
-    image city_pic = "images/cities/[p1]"
-                  ^
-    
-
-File "game/cities_info.rpy", line 9: invalid syntax
-    image gerb = "images/cities/[p2]"
-              ^
-    
+File "game/english.rpy", line 15: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    label eng_level:
+    ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Nov 21 09:59:43 2018
+Thu Nov 29 21:57:10 2018

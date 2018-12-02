@@ -1,15 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/lev2_geo.rpy", line 40, in script
     $ country_new = random.choice(set(countries_to_use) - set(used))
   File "game/lev2_geo.rpy", line 40, in <module>
     $ country_new = random.choice(set(countries_to_use) - set(used))
 TypeError: 'RevertableSet' object does not support indexing
+=======
+  File "game/english.rpy", line 22, in script
+    jump level0_eng
+ScriptError: could not find label 'level0_eng'.
+>>>>>>> master
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "game/lev2_geo.rpy", line 40, in script
     $ country_new = random.choice(set(countries_to_use) - set(used))
   File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
@@ -20,8 +27,21 @@ Full traceback:
     $ country_new = random.choice(set(countries_to_use) - set(used))
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/random.py", line 275, in choice
 TypeError: 'RevertableSet' object does not support indexing
+=======
+  File "game/english.rpy", line 22, in script
+    jump level0_eng
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'level0_eng'.
+>>>>>>> master
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
+<<<<<<< HEAD
 Tue Nov 27 00:10:25 2018
+=======
+Fri Nov 30 16:55:20 2018
+>>>>>>> master
