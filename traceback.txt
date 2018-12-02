@@ -1,47 +1,56 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-<<<<<<< HEAD
-  File "game/lev2_geo.rpy", line 40, in script
-    $ country_new = random.choice(set(countries_to_use) - set(used))
-  File "game/lev2_geo.rpy", line 40, in <module>
-    $ country_new = random.choice(set(countries_to_use) - set(used))
-TypeError: 'RevertableSet' object does not support indexing
-=======
-  File "game/english.rpy", line 22, in script
-    jump level0_eng
-ScriptError: could not find label 'level0_eng'.
->>>>>>> master
+After initialization, but before game start.
+  File "game/lev0_eng.rpy", line 40, in prepare_screen
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 40, in prepare
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 42, in prepare
+    draggroup:
+  File "game/lev0_eng.rpy", line 42, in prepare
+    draggroup:
+  File "game/lev0_eng.rpy", line 43, in prepare
+    for i, pic in enumerate(pic_keys):
+  File "game/lev0_eng.rpy", line 43, in prepare
+    for i, pic in enumerate(pic_keys):
+  File "game/lev0_eng.rpy", line 50, in prepare
+    drag:
+  File "game/lev0_eng.rpy", line 50, in prepare
+    drag:
+Exception: A screen named icon does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
-  File "game/lev2_geo.rpy", line 40, in script
-    $ country_new = random.choice(set(countries_to_use) - set(used))
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/lev2_geo.rpy", line 40, in <module>
-    $ country_new = random.choice(set(countries_to_use) - set(used))
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/random.py", line 275, in choice
-TypeError: 'RevertableSet' object does not support indexing
-=======
-  File "game/english.rpy", line 22, in script
-    jump level0_eng
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'level0_eng'.
->>>>>>> master
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\main.py", line 513, in main
+    run(restart)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\main.py", line 90, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 908, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/lev0_eng.rpy", line 40, in prepare_screen
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 40, in prepare
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 42, in prepare
+    draggroup:
+  File "game/lev0_eng.rpy", line 42, in prepare
+    draggroup:
+  File "game/lev0_eng.rpy", line 43, in prepare
+    for i, pic in enumerate(pic_keys):
+  File "game/lev0_eng.rpy", line 43, in prepare
+    for i, pic in enumerate(pic_keys):
+  File "game/lev0_eng.rpy", line 50, in prepare
+    drag:
+  File "game/lev0_eng.rpy", line 50, in prepare
+    drag:
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\sl2\slast.py", line 1622, in prepare
+    raise Exception("A screen named {} does not exist.".format(self.target))
+Exception: A screen named icon does not exist.
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-<<<<<<< HEAD
-Tue Nov 27 00:10:25 2018
-=======
-Fri Nov 30 16:55:20 2018
->>>>>>> master
+Sun Dec 02 20:36:35 2018

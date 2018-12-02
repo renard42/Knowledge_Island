@@ -68,7 +68,7 @@ label level2_geo:
                         "Хочу! Давай повторим!":
                             jump finally_game
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                            cat_geo "До встречи, умный ребенок! заходит еще!"
+                            cat_geo "До встречи, умный ребенок!"
                             jump start
 
             else:
@@ -84,7 +84,7 @@ label level2_geo:
                         "Да, я готов!":
                             $ player = False
                             jump game_countries
-                            $num_err = 3
+                            $ num_err = 3
                         "Нет, я лучше еще потренируюсь и приду":
                             cat_geo "До встречи, я буду тебя ждать!"
                             jump start
