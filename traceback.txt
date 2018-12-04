@@ -1,67 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/lev0_eng.rpy", line 160, in script
-    $ res = ui.interact(clear = True)
-  File "game/lev0_eng.rpy", line 160, in <module>
-    $ res = ui.interact(clear = True)
-  File "game/lev0_eng.rpy", line 63, in execute
-    screen send_word_screen:
-  File "game/lev0_eng.rpy", line 63, in execute
-    screen send_word_screen:
-  File "game/lev0_eng.rpy", line 64, in execute
-    draggroup:
-  File "game/lev0_eng.rpy", line 105, in execute
-    drag:
-  File "game/lev0_eng.rpy", line 105, in keywords
-    drag:
-IndexError: list index out of range
+  File "game/lev1_logic.rpy", line 130, in script
+    if animal_life>0:
+  File "game/lev1_logic.rpy", line 130, in <module>
+    if animal_life>0:
+NameError: name 'animal_life' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/lev0_eng.rpy", line 160, in script
-    $ res = ui.interact(clear = True)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/lev0_eng.rpy", line 160, in <module>
-    $ res = ui.interact(clear = True)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 424, in visit_all
-    callback(self)
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 434, in per_interact
-    self.update()
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 619, in update
-    self.screen.function(**self.scope)
-  File "game/lev0_eng.rpy", line 63, in execute
-    screen send_word_screen:
-  File "game/lev0_eng.rpy", line 63, in execute
-    screen send_word_screen:
-  File "game/lev0_eng.rpy", line 64, in execute
-    draggroup:
-  File "game/lev0_eng.rpy", line 105, in execute
-    drag:
-  File "game/lev0_eng.rpy", line 105, in keywords
-    drag:
-  File "<screen language>", line 111, in <module>
-IndexError: list index out of range
+  File "game/lev1_logic.rpy", line 130, in script
+    if animal_life>0:
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1760, in execute
+    if renpy.python.py_eval(condition):
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/lev1_logic.rpy", line 130, in <module>
+    if animal_life>0:
+NameError: name 'animal_life' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Tue Dec 04 21:48:14 2018
+Tue Dec 04 18:18:13 2018

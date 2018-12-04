@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lev0_eng.rpy", line 119: expected statement.
-    renpy.hide(dra)
-                   ^
-
-File "game/lev0_eng.rpy", line 120: expected statement.
-    renpy.hide(dro)
-                   ^
+File "game/lev1_logic.rpy", line 75: Only one say menuitem may exist per menu.
+    sphynx "[new_answer]"
+                         ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Dec 04 20:06:59 2018
+Tue Dec 04 18:05:52 2018
