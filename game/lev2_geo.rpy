@@ -15,6 +15,8 @@ init python:
         info.append(final[co])
 
 
+
+
 label level2_geo:
 
     cat_geo "Ты дошел до самого сложного уровня!"
@@ -34,7 +36,7 @@ label level2_geo:
         $ player = False
 
         $ i = 0
-        $ life = 3
+        $ num_err = 3
 
         while i<=4:
             $ country_new = random.choice(list(set(countries_to_use) - set(used)))

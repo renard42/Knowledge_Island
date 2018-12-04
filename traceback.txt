@@ -1,28 +1,67 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/lev0_eng.rpy", line 14, in script
-    init python:
-  File "game/lev0_eng.rpy", line 15, in <module>
-    text_list = list(random.shuffle([[0.6, 0.05], [0.6, 0.5], [0.6, 0.2]]))
-TypeError: 'NoneType' object is not iterable
+  File "game/lev0_eng.rpy", line 160, in script
+    $ res = ui.interact(clear = True)
+  File "game/lev0_eng.rpy", line 160, in <module>
+    $ res = ui.interact(clear = True)
+  File "game/lev0_eng.rpy", line 63, in execute
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 63, in execute
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 64, in execute
+    draggroup:
+  File "game/lev0_eng.rpy", line 105, in execute
+    drag:
+  File "game/lev0_eng.rpy", line 105, in keywords
+    drag:
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/lev0_eng.rpy", line 14, in script
-    init python:
+  File "game/lev0_eng.rpy", line 160, in script
+    $ res = ui.interact(clear = True)
   File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/lev0_eng.rpy", line 15, in <module>
-    text_list = list(random.shuffle([[0.6, 0.05], [0.6, 0.5], [0.6, 0.2]]))
-  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\python.py", line 799, in __init__
-    list.__init__(self, *args)
-TypeError: 'NoneType' object is not iterable
+  File "game/lev0_eng.rpy", line 160, in <module>
+    $ res = ui.interact(clear = True)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 424, in visit_all
+    callback(self)
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 434, in per_interact
+    self.update()
+  File "C:\Users\Aleksandra\Documents\renpy-7.1.1-sdk\renpy\display\screen.py", line 619, in update
+    self.screen.function(**self.scope)
+  File "game/lev0_eng.rpy", line 63, in execute
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 63, in execute
+    screen send_word_screen:
+  File "game/lev0_eng.rpy", line 64, in execute
+    draggroup:
+  File "game/lev0_eng.rpy", line 105, in execute
+    drag:
+  File "game/lev0_eng.rpy", line 105, in keywords
+    drag:
+  File "<screen language>", line 111, in <module>
+IndexError: list index out of range
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
- 
-Sun Dec 02 22:28:10 2018
+KnowledgeIsland 1.0
+Tue Dec 04 21:48:14 2018

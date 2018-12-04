@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/lev0_eng.rpy", line 90: expected statement.
-    text_list = random.shuffle([[0.5, 0.1], [0.5, 0.5], [0.5, 0.3]])
-              ^
+File "game/lev0_eng.rpy", line 119: expected statement.
+    renpy.hide(dra)
+                   ^
 
-File "game/lev0_eng.rpy", line 91: expected statement.
-    pic_list = random.shuffle([[0.1, 0.5], [0.1,0.1], [0.1, 0.3]])
-             ^
+File "game/lev0_eng.rpy", line 120: expected statement.
+    renpy.hide(dro)
+                   ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Sun Dec 02 21:45:15 2018
+Tue Dec 04 20:06:59 2018
