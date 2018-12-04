@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/english.rpy", line 15: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
-    label eng_level:
-    ^
+File "game/lev1_logic.rpy", line 75: Only one say menuitem may exist per menu.
+    sphynx "[new_answer]"
+                         ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Thu Nov 29 21:57:10 2018
+Tue Dec 04 18:05:52 2018
