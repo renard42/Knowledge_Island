@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/english.rpy", line 22, in script
-    jump level0_eng
-ScriptError: could not find label 'level0_eng'.
+  File "game/lev1_logic.rpy", line 130, in script
+    if animal_life>0:
+  File "game/lev1_logic.rpy", line 130, in <module>
+    if animal_life>0:
+NameError: name 'animal_life' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/english.rpy", line 22, in script
-    jump level0_eng
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1631, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\script.py", line 875, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'level0_eng'.
+  File "game/lev1_logic.rpy", line 130, in script
+    if animal_life>0:
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 1760, in execute
+    if renpy.python.py_eval(condition):
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1944, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/lev1_logic.rpy", line 130, in <module>
+    if animal_life>0:
+NameError: name 'animal_life' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
 KnowledgeIsland 1.0
-Fri Nov 30 16:55:20 2018
+Tue Dec 04 18:18:13 2018

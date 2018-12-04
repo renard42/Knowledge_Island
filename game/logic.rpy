@@ -5,6 +5,26 @@ label logic:
     scene bg pyrs
     show sph
 
-    sphynx "Приходи позже, я еще не поел"
+    sphynx "Добро пожаловать!"
 
-    jump start
+    sphynx "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
+
+    sphynx "С чего начнем?"
+
+    show sph at left with move
+    label logic_level:
+            menu:
+
+                sphynx "Какой уровень пррредпочитаешь?"
+
+                "Начнем с чего попроще":
+
+                    jump level0_logic
+
+                "А есть что-то среднее?":
+
+                    jump level1_logic
+
+                "Я уверен в себе! Давай самое сложное!":
+
+                    jump level2_logic
