@@ -156,7 +156,6 @@ label memo_game_win:
         $ store.e=-1
         $ v = list(set(v))
         $ p = list(desc.keys())
-        sphynx "[p]"
         while e<len(v)-1:
             $ e+=1
             if v[e]!='empty':
@@ -165,7 +164,6 @@ label memo_game_win:
                 show img at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
                     zoom 3.0
                 $ name = v[e]
-                #sphynx "[name]"
                 $ description = desc[name].split('.')
                 $ e1 = 0
                 while e1<len(description)-1:
