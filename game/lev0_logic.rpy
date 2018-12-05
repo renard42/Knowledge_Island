@@ -145,7 +145,7 @@ label memo_game_win:
     $ temp_names = {n : n1[0] for n,n1 in ms.items() if n in v}
     $ desc = {n : n1[1] for n,n1 in ms.items() if n in v}
     menu:
-        sphynx "В моей игре ты видел: [names]. Хочешь узнать об этих инструментах?"
+        sphynx "Интересные инструменты, которые ты видел в игре - это [names]. Хочешь о них побольше?"
         "Да, конечно!":
             jump explain
         "Нет, я все знаю. Давай дальше!":
@@ -180,8 +180,20 @@ label memo_game_win:
 
 
 label level0_logic:
-    scene bg pyrs
-    $ max_time = 60
-    $ ww, hh = 4, 4
-    call memoria_game
-    return
+    menu:
+        sphynx "Хочешь проверить свою память?"
+        "Хочу":
+            sphynx "Замечательно!"
+            sphynx "Я очень люблю музыку и музыкальные инструменты. Предлагаю тебе поиграть с ними!"
+            sphynx "В моей игре тебе нужно за минуту найти пары к карточкам"
+            sphynx "Если ты угадал - на месте карточек появится зеленая галочка, если нет - карточки перевернутся обратно"
+            sphynx "Начнем!"
+            scene bg pyrs
+            $ max_time = 60
+            $ ww, hh = 4, 4
+            call memoria_game
+            return
+
+        "Лучше в другой раз":
+            sphynx "Приходи еще!"
+            jump start
