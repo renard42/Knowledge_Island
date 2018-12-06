@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/lev1_logic.rpy", line 75: Only one say menuitem may exist per menu.
-    sphynx "[new_answer]"
-                         ^
+File "game/lev0_logic.rpy", line 34: invalid syntax
+    $ store.sequence=[] 
+     ^
+    
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Dec 04 18:05:52 2018
+Wed Dec 05 10:42:36 2018
