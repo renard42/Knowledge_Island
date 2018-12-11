@@ -11,7 +11,8 @@ label level2_math:
         "Может другое?":
             jump math_level
 
-label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0, used = []):
+label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0):
+    $ used = []
     $ right = []
     $ wrong = []
     $ lst = []
@@ -40,7 +41,7 @@ label turn:
         for i in range(toadd):
             wrong_first = random.randint(1,6)
             wrong_sec = random.randint(1,6)
-            while (wrong_first, wrong_sec) in wrong:
+            while ((wrong_first, wrong_sec) in wrong) or ((wrong_first, wrong_sec) in right):
                 wrong_first = random.randint(1,6)
                 wrong_sec = random.randint(1,6)
             if wrong_first+wrong_sec == sum:
@@ -76,16 +77,22 @@ label guess:
                     hide cat math
                     jump start
         else:
-            "Ты ошибся! У тебя осталось [err_check] попыток"
+            "Ты ошибся! У тебя осталось попыток: [err_check]"
             call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check)
     else:
         $ i+=1
 
         if i == len(right)-1:
+            "Правильно!"
             $ right_check+=1
-            jump end
+
+            jump math_end
+        else:
+            "Верно, найди еще [len(right)-1-i]!"
     jump guess
-label end:
+
+label math_end:
+
     if right_check==complete:
         cat_math "Ты победил!"
         menu:
