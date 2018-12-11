@@ -2,19 +2,9 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/lev0_logic.rpy", line 34: invalid syntax
-    $ store.sequence=[] 
-     ^
-    
+File "game/lev2_math.rpy", line 71: expected statement.
+    right_check+=1
+               ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Dec 05 10:42:36 2018
-=======
-File "game/lev0_logic.rpy", line 165: Line is indented, but the preceding image statement statement does not expect a block. Please check this line's indentation.
-    zoom 3.0
-    ^
-
-Ren'Py Version: Ren'Py 7.1.1.929
-Wed Dec 05 01:47:34 2018
->>>>>>> master
+Tue Dec 11 21:07:02 2018

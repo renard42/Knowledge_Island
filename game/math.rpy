@@ -10,7 +10,5 @@ label math:
 
     show cat math at left with move
 
-    init python:
-        print("!")
-
-    jump start
+label math_level:
+    jump lev2_math 
