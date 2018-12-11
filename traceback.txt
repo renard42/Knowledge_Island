@@ -1,0 +1,36 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/lev0_math.rpy", line 80, in script
+    image some_example = Text("[some_number]", size=40)
+  File "game/lev0_math.rpy", line 80, in <module>
+    image some_example = Text("[some_number]", size=40)
+KeyError: u'some_number'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/lev0_math.rpy", line 80, in script
+    image some_example = Text("[some_number]", size=40)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 981, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/lev0_math.rpy", line 80, in <module>
+    image some_example = Text("[some_number]", size=40)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\text\text.py", line 1385, in __init__
+    self.set_text(text, scope, substitute)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\text\text.py", line 1488, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\substitutions.py", line 244, in substitute
+    s = formatter.vformat(s, (), kwargs)
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
+KeyError: u'some_number'
+
+Windows-8-6.2.9200
+Ren'Py 7.1.1.929
+ 
+Tue Dec 11 10:19:00 2018
