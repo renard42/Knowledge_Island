@@ -6,13 +6,13 @@ label level2_math:
 
         "Интересно!":
             hide cat math
-            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0)
+            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[])
 
         "Может другое?":
             jump math_level
 
-label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0):
-    $ used = []
+label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0, used=[]):
+    #$ used = []
     $ right = []
     $ wrong = []
     $ lst = []
@@ -20,20 +20,20 @@ label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0):
 label turn:
     python:
         sum = random.randint(2,11)
-        for e in range(2):
+        for _ in range(2):
             if sum<8:
                 first_right_num=random.randint(1,sum-1)
                 new_right=(first_right_num, sum-first_right_num)
-                while (new_right in right) or (new_right in used):
+                while (new_right in used):
                     first_right_num=random.randint(1,sum-1)
-                    new_right=((first_right_num, sum-first_right_num))
+                    new_right=(first_right_num, sum-first_right_num)
                 right.append(new_right)
                 used.append(new_right)
 
             else:
                 first_right_num=random.randint(sum-6,6)
                 new_right=(first_right_num, sum-first_right_num)
-                while (new_right in right) or (new_right in used):
+                while (new_right in used):
                     first_right_num=random.randint(sum-6,6)
                     new_right=(first_right_num, sum-first_right_num)
                 right.append(new_right)
@@ -51,7 +51,6 @@ label turn:
         lst+=wrong
         lst+=right[1:]
         random.shuffle(lst)
-    #cat_math "[right] and [wrong]"
 label math_show:
     $ i=0
     show screen lookatthis
@@ -88,11 +87,11 @@ label guess:
 
             jump math_end
         else:
-            "Верно, найди еще [len(right)-1-i]!"
+            $ num = [len(right)-1-i]
+            "Верно, найди еще [num]!"
     jump guess
 
 label math_end:
-
     if right_check==complete:
         cat_math "Ты победил!"
         menu:
