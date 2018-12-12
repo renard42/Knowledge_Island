@@ -46,7 +46,6 @@ cake
 sweets
 toast
 vegetables
-carrot
 cucumber
 tomato
 cabbage
