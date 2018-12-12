@@ -51,7 +51,6 @@ label turn:
         lst+=wrong
         lst+=right[1:]
         random.shuffle(lst)
-    cat_math "[right] and [wrong]"
 label math_show:
     $ i=0
     show screen lookatthis
@@ -93,7 +92,6 @@ label guess:
     jump guess
 
 label math_end:
-
     if right_check==complete:
         cat_math "Ты победил!"
         menu:
