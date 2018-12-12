@@ -1,0 +1,10 @@
+Какая из этих фигур не призма?;prism.png,parallel_not90.png,cylinder.png,prism_many.png;cylinder.png
+Найди невыпуклую фигуру.;Simple_polygon.png,prism_many.png,Trapez.png,code2.png;Simple_polygon.png
+Какой из этих предметов цилиндр?;aquarium.png,hat.png,brick.png,parallel_90.png;hat.png
+Какой из этих предметов треугольник?;lineika.png,pencil.png,brick.png,box.png;lineika.png
+Какой из этих предметов не параллелепипед?;book.png,box.png,box2.png,brick.png;box2.png
+У какой фигуры больше всего ребер?;prism.png,prism_many.png,nevyp.png,prism6.png;prism_many.png
+В какой фигуре нет параллельных прямых?;Trapez.png,triangle_big.png,square.png,parallel_not90.png;triangle_big.png
+Какой из этих треугольников называют "правильным"?;triangle_big.png,isosceles_triangle.png,triang_right.png,triangle90.png;triang_right.png
+Найди куб.;parallelepiped.png,cube.png,parallel_90.png,parallel_not90.png;cube.png
+Какой предмет состоит больше, чем из одной фигуры?;brick.png,box.png,box2.png,pencil.png;pencil.png

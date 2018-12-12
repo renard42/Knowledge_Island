@@ -94,10 +94,10 @@ label memoria_game:
         $ turns_left = max_c
         label turns_loop:
             if turns_left > 0:
-                $ result = ui.interact()
+                $ result1 = ui.interact()
                 $ memo_timer = memo_timer
-                $ turned_cards_numbers.append (cards_list[result]["c_number"])
-                $ turned_cards_values.append (cards_list[result]["c_value"])
+                $ turned_cards_numbers.append (cards_list[result1]["c_number"])
+                $ turned_cards_values.append (cards_list[result1]["c_value"])
                 $ turns_left -= 1
                 jump turns_loop
         $ can_click = False
@@ -160,8 +160,8 @@ label memo_game_win:
             $ e+=1
             if v[e]!='empty':
                 $ t = v[e]
-                image img = "images/card_[t].png"
-                show img at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
+                image img_m = "images/card_[t].png"
+                show img_m at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
                     zoom 3.0
                 $ name = v[e]
                 $ description = desc[name].split('.')

@@ -78,12 +78,12 @@ label level2_eng:
         show screen numbers_scr
 
         label loop:
-            $ result = ui.interact()
+            $ result3 = ui.interact()
             $ game_timer = game_timer
-            if result == "smth":
+            if result3 == "smth":
                 jump loop
 
-        if result == "lose":
+        if result3 == "lose":
             hide screen numbers_scr
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
@@ -97,7 +97,7 @@ label level2_eng:
                     cat "Возвращайся!"
                     jump english
 
-        if result == "win":
+        if result3 == "win":
             hide screen numbers_scr
             hide img
             $ renpy.pause (0.1, hard = True)
