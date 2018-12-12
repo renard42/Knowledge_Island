@@ -41,16 +41,16 @@ label figures_game:
                         cards_list.append ( {"value": "/images/figures/"+imgs[i], "correct":False} )
             show screen figure_scr
             $ renpy.say(cat_math,task)
-            $ result = ui.interact()
+            $ result2 = ui.interact()
             $ r+=1
-            while result!=True and mistakes!=0:
+            while result2!=True and mistakes!=0:
                 $ mistakes -=1
                 cat_math "Неправильно! У тебя осталось попыток: [mistakes]. Попробуй еще раз!"
                 $ renpy.say(cat_math,task)
-                $ result = ui.interact()
+                $ result2 = ui.interact()
             if mistakes == 0:
                 jump figure_lose
-            if result == True and r!=5:
+            if result2 == True and r!=5:
                 cat_math "Правильно! Слушай следующий вопрос."
 
         if mistakes == 0:
