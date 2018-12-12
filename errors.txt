@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/lev0_logic.rpy", line 165: Line is indented, but the preceding image statement statement does not expect a block. Please check this line's indentation.
-    zoom 3.0
-    ^
+File "game/lev0_math.rpy", line 79: invalid syntax
+    image some_example = Text(some_number, size=40)
+                      ^
+    
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Wed Dec 05 01:47:34 2018
+Tue Dec 11 10:17:01 2018
