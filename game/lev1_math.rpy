@@ -25,7 +25,6 @@ label figures_game:
     init python:
         store.used = []
     label figures_turns_loop:
-        cat_math "[r]"
         while r!=5:
             python:
                 cards_list = []
