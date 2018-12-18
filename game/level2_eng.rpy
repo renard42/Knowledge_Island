@@ -93,6 +93,7 @@ label level2_eng:
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
+            $ renpy.music.play(fail, loop=False)
             menu:
                 cat "Ты проиграл :( Попробуешь еще раз?"
                 "Да, давай еще раз!":
@@ -113,6 +114,7 @@ label level2_eng:
                 $count+=1
                 jump numbers_game
             else:
+                $ renpy.music.play(success, loop=False)
                 cat "Молодец, ты выиграл! Идем дальше?"
                 hide game_bg
                 scene bg england

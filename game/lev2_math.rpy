@@ -65,6 +65,7 @@ label guess:
     if not any(thesign == dasign for thesign in right):
         $ err_check-=1
         if not err_check:
+            $ renpy.music.play(fail, loop=False)
             cat_math "Я победил! Деталька моя"
             menu:
                 cat_math "Хочешь сыграть еще раз?"
@@ -91,6 +92,7 @@ label guess:
 
 label math_end:
     if right_check==complete:
+        $ renpy.music.play(success, loop=False)
         cat_math "Ты победил!"
         $ ship_status["math"]["3"] = True
         menu:

@@ -118,6 +118,7 @@ label memoria_game:
         jump memo_game_loop
 
 label memo_game_lose:
+    $ renpy.music.play(fail, loop=False)
     hide screen memo_scr
     $ renpy.pause (0.1, hard = True)
     menu:
@@ -129,6 +130,7 @@ label memo_game_lose:
             jump logic_level
 
 label memo_game_win:
+    $ renpy.music.play(success, loop=False)
     hide screen memo_scr
     $ renpy.pause (0.1, hard = True)
     show sph at left with move

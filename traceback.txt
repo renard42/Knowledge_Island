@@ -1,36 +1,105 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/lev0_math.rpy", line 80, in script
-    image some_example = Text("[some_number]", size=40)
-  File "game/lev0_math.rpy", line 80, in <module>
-    image some_example = Text("[some_number]", size=40)
-KeyError: u'some_number'
+  File "game/lev2_math.rpy", line 9, in script call
+    call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[])
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev0_logic.rpy", line 194, in script call
+    call memoria_game
+  File "game/lev2_logic.rpy", line 23, in script call
+    call simon pass (complete=5, toadd=1, err_check = 3)
+  File "game/lev2_logic.rpy", line 91, in script
+    sphynx "До встречи! Заходи еще!"
+  File "game/screens.rpy", line 1138, in execute
+    screen confirm(message, yes_action, no_action):
+  File "game/screens.rpy", line 1138, in execute
+    screen confirm(message, yes_action, no_action):
+  File "game/screens.rpy", line 1149, in execute
+    frame:
+  File "game/screens.rpy", line 1151, in execute
+    vbox:
+  File "game/screens.rpy", line 1156, in execute
+    label _(message):
+TypeError: 'int' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/lev0_math.rpy", line 80, in script
-    image some_example = Text("[some_number]", size=40)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 981, in execute
-    img = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\python.py", line 1937, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/lev0_math.rpy", line 80, in <module>
-    image some_example = Text("[some_number]", size=40)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\text\text.py", line 1385, in __init__
-    self.set_text(text, scope, substitute)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\text\text.py", line 1488, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
-  File "D:\ren'py\renpy-7.1.1-sdk\renpy\substitutions.py", line 244, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'some_number'
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\bootstrap.py", line 313, in bootstrap
+    renpy.main.main()
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\main.py", line 513, in main
+    run(restart)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\main.py", line 139, in run
+    renpy.execution.run_context(True)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\execution.py", line 876, in run_context
+    context.run()
+  File "game/lev2_math.rpy", line 9, in script call
+    call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[])
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev2_math.rpy", line 110, in script call
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+  File "game/lev0_logic.rpy", line 194, in script call
+    call memoria_game
+  File "game/lev2_logic.rpy", line 23, in script call
+    call simon pass (complete=5, toadd=1, err_check = 3)
+  File "game/lev2_logic.rpy", line 91, in script
+    sphynx "До встречи! Заходи еще!"
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ast.py", line 678, in execute
+    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\exports.py", line 1204, in say
+    who(what, *args, **kwargs)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\character.py", line 1031, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\character.py", line 823, in do_display
+    **display_args)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\character.py", line 572, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\ui.py", line 289, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 2662, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 521, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\screen.py", line 424, in visit_all
+    callback(self)
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\core.py", line 3049, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\screen.py", line 434, in per_interact
+    self.update()
+  File "D:\ren'py\renpy-7.1.1-sdk\renpy\display\screen.py", line 619, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1138, in execute
+    screen confirm(message, yes_action, no_action):
+  File "game/screens.rpy", line 1138, in execute
+    screen confirm(message, yes_action, no_action):
+  File "game/screens.rpy", line 1149, in execute
+    frame:
+  File "game/screens.rpy", line 1151, in execute
+    vbox:
+  File "game/screens.rpy", line 1156, in execute
+    label _(message):
+  File "<screen language>", line 1156, in <module>
+TypeError: 'int' object is not callable
 
 Windows-8-6.2.9200
 Ren'Py 7.1.1.929
- 
-Tue Dec 11 10:19:00 2018
+KnowledgeIsland 1.0
+Tue Dec 18 15:17:08 2018

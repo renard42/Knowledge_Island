@@ -91,6 +91,7 @@ label level1_logic:
                         else:
                             if answer=='Нет':
                                 sphynx "Молодец! [new_description]"
+                            $ renpy.music.play(success, loop=False)
                             sphynx "Поздравляю! Ты прошел уровень!"
                             $ ship_status["logic"]["2"] = True
                             menu:
@@ -111,6 +112,7 @@ label level1_logic:
                             sphynx "У тебя еще [yesorno_life] жизнь"
                         else:
                             sphynx "Непррррраввильный ответ! [new_description]"
+                            $ renpy.music.play(fail, loop=False)
                             sphynx "Я победил! Деталька моя"
                             menu:
                                 sphynx "Хочешь сыграть еще раз?"

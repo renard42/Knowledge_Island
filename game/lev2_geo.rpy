@@ -58,6 +58,7 @@ label level2_geo:
                         #$ renpy.say(cat_geo, str(len(country_info)))
                     #$ renpy.say(cat_geo, country_info)
                 else:
+                    $ renpy.music.play(success, loop=False)
                     cat_geo "Уррррраа! Ты прошел уровень!"
 
                     $ship_status["geo"]["3"] = True
@@ -78,6 +79,7 @@ label level2_geo:
                 elif num_err==1:
                     cat_geo "Ну как же так? Это [country_new]. У тебя осталась всего [num_err] жизнь"
                 else:
+                    $ renpy.music.play(fail, loop=False)
                     menu:
                         cat_geo "Это [country_new], а ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова! Или может, хочешь попробовать еще раз?"
 

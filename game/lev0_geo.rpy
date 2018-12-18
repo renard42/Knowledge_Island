@@ -102,6 +102,7 @@ label level0_geo:
                         $ city = renpy.input("Назови город: ")
 
                     if life==0:
+                        $ renpy.music.play(fail, loop=False)
                         cat_geo "Ты проиграл, и детальку я тебе не отдам!\nИзучи карту и приходи снова!"
                         menu:
                             cat_geo "Или может, хочешь попробовать еще раз?"
@@ -124,6 +125,7 @@ label level0_geo:
                 $ count+=1
 
             label geo_win:
+                $ renpy.music.play(success, loop=False)
                 hide game_buttons
                 cat_geo "Ты победил! :3"
                 cat_geo "Молодец! Идем дальше?"
