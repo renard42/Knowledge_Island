@@ -2,9 +2,7 @@ window
 door
 sofa
 table
-chair
 arm-chair
-clock
 telephone
 computer
 desk
@@ -52,10 +50,8 @@ cabbage
 potato
 pea
 pepper
-fruit
-apple
 lemon
-orangebanana
+orange
 car
 plane
 ball
@@ -71,12 +67,13 @@ toothbrush
 painting
 soap
 pillow
-key
 kettle
 towel
 alarm clock
 clock
-kettle
 key
 flower
 spoon
+peach
+book
+fruits

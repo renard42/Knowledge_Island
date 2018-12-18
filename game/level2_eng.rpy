@@ -8,7 +8,6 @@ label level2_eng:
         hover_background "#DEB887"
     screen numbers_scr:
 
-        # It is better to operate this game with mouse only, so just disable cursor and enter keys
         key "K_LEFT" action Hide("nonexistent_screen")
         key "K_RIGHT" action Hide("nonexistent_screen")
         key "K_UP" action Hide("nonexistent_screen")
@@ -37,7 +36,7 @@ label level2_eng:
 
     cat "Давай поиграем в слова!"
     cat "Я буду показывать тебе картинки и буквы. Тебе нужно составить из букв то, что изображено на картинке"
-    cat "Но только время ограничено - 30 секунд на одно слово. В левом верхнем углу будет таймер."
+    cat "Но только время ограничено - 20 секунд на одно слово. В левом верхнем углу будет таймер."
     cat "Если ты нажмешь на неверную букву, то времени станет меньше"
 
     menu:
@@ -45,7 +44,7 @@ label level2_eng:
         "Да, давай!":
             jump numbers_game
         "Не хочу. Лучше другую игру":
-            jump english
+            jump eng_level
 
     label numbers_game:
         scene game_bg
@@ -53,9 +52,11 @@ label level2_eng:
         $ numbers_buttons = []
         $ buttons_values = []
 
-        $ word = random.choice(words)[:-1]
-        $ w = [i.upper() for i in word]
-        $ word_img = word.replace(' ', '_')
+
+        $ word = random.choice(words)
+        $ del words[words.index(str(word))]
+        $ w = [i.upper() for i in word[:-1]]
+        $ word_img = word[:-1].replace(' ', '_')
 
         init:
             image img = "images/eng_lev2/[word_img].png"
@@ -71,9 +72,9 @@ label level2_eng:
 
             for num, dic in enumerate(numbers_buttons[:-1]):
                 if dic["b_x_pos"] - numbers_buttons[num+1]["b_x_pos"] < 10:
-                    numbers_buttons[num+1]["b_x_pos"] +=50
+                    numbers_buttons[num+1]["b_x_pos"] +=30
 
-        $ game_timer = 30
+        $ game_timer = 20
 
         show screen numbers_scr
 
@@ -85,6 +86,9 @@ label level2_eng:
 
         if result3 == "lose":
             hide screen numbers_scr
+            hide game_bg
+            scene bg england
+            show cat england
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
@@ -96,7 +100,7 @@ label level2_eng:
                     jump numbers_game
                 "Лучше еще потренируюсь":
                     cat "Возвращайся!"
-                    jump english
+                    jump eng_level
 
         if result3 == "win":
             hide screen numbers_scr
@@ -108,11 +112,14 @@ label level2_eng:
             "Все верррно!"
             if count!=5:
                 $count+=1
-                cat "Молодец! Давай следующее слово!"
                 jump numbers_game
             else:
                 $ renpy.music.play(success, loop=False)
                 cat "Молодец, ты выиграл! Идем дальше?"
+                hide game_bg
+                scene bg england
+                show cat england
+                $ship_status["eng"]["3"] = True
                 menu:
                     cat "Хочешь сыграть еще раз?"
 
@@ -121,4 +128,4 @@ label level2_eng:
                         jump numbers_game
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat "До встречи! Заходи еще!"
-                        jump start
+                        jump eng_level

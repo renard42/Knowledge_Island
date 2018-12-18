@@ -95,13 +95,13 @@ label level1_eng:
                             cat_eng "Хочешь сыграть еще раз?"
 
                             "Конечно!":
+                                $ ship_status["eng"]["2"] = True
                                 jump game_animal
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_eng "До встречи! Заходи еще!"
-                                hide bg england
-                                hide cat england
+                                $ ship_status["eng"]["2"] = True
                                 hide screen game_eng_buttons
-                                jump start
+                                jump eng_level
                 else:
                     show given_animal at Position(xpos = 0.60, xanchor=0.3, ypos=0.2, yanchor=0.2)
                     $ animal_life -= 1
@@ -124,10 +124,9 @@ label level1_eng:
                                 jump game_animal
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_eng "До встречи! Заходи еще!"
-                                hide bg england
-                                hide cat england
+
                                 hide screen game_eng_buttons
-                                jump start
+                                jump eng_level
 
                 label continue_animal:
                     $ num = animal_life
@@ -144,7 +143,6 @@ label level1_eng:
                         jump game_animal
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat_eng "До встречи! Заходи еще!"
-                        hide bg england
-                        hide cat england
+
                         hide screen game_eng_buttons
-                        jump start
+                        jump eng_level

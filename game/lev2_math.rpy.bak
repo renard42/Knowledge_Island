@@ -65,7 +65,6 @@ label guess:
     if not any(thesign == dasign for thesign in right):
         $ err_check-=1
         if not err_check:
-            $ renpy.music.play(fail, loop=False)
             cat_math "Я победил! Деталька моя"
             menu:
                 cat_math "Хочешь сыграть еще раз?"
@@ -73,7 +72,9 @@ label guess:
                     call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0)
                 "Нет, надо передохнуть":
                     cat_math "Возвращайся в другой раз"
-                    jump math_level
+                    hide bg math
+                    hide cat math
+                    jump start
         else:
             "Ты ошибся! У тебя осталось попыток: [err_check]"
             call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check)
@@ -92,9 +93,7 @@ label guess:
 
 label math_end:
     if right_check==complete:
-        $ renpy.music.play(success, loop=False)
         cat_math "Ты победил!"
-        $ ship_status["math"]["3"] = True
         menu:
             cat_math "Хочешь сыграть еще раз?"
             "Конечно!":
@@ -102,7 +101,9 @@ label math_end:
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 cat_math "До встречи! Заходи еще!"
-                jump math_level
+                hide bg math
+                hide cat math
+                jump start
                 return
     call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
 

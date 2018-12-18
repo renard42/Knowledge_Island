@@ -167,19 +167,20 @@ while True:
             $ num_right += 1
             if num_right==6:
                 $ renpy.music.play(success, loop=False)
+                $ ship_status["eng"]["1"] = True
                 cat_geo "Уррррраа! Ты прошел уровень!"
 
 
                 menu:
-                    cat_geo "Хочешь сыграть еще раз?"
+                    cat_eng "Хочешь сыграть еще раз?"
 
                     "Хочу! Давай повторим!":
                         hide screen send_word_screen
                         show screen send_word_screen
                         jump game_curiosities
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                        cat_geo "До встречи, умный ребенок!"
-                        jump start
+                        cat_eng "До встречи, умный ребенок!"
+                        jump eng_level
 
         else:
             $ err-=1
@@ -192,17 +193,15 @@ while True:
                 $ renpy.music.play(fail, loop=False)
                 hide screen send_word_screen
                 menu:
-                    cat_geo "Ты проиграл, и детальку я тебе не отдам!\n Хочешь попробовать еще раз?"
+                    cat_eng "Ты проиграл!\n Хочешь попробовать еще раз?"
                     "Да, я готов!":
                         jump game_curiosities
                     "Нет, я лучше еще потренируюсь и приду":
-                        cat_geo "До встречи, я буду тебя ждать!"
+                        cat_eng "До встречи, я буду тебя ждать!"
 
                         hide send_word_screen
                         hide img
-                        hide bg eng
-                        hide cat eng
-                        jump start
+                        jump eng_level
 
 
     $ can_move = True

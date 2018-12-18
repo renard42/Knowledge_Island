@@ -93,6 +93,7 @@ label level1_logic:
                                 sphynx "Молодец! [new_description]"
                             $ renpy.music.play(success, loop=False)
                             sphynx "Поздравляю! Ты прошел уровень!"
+                            $ ship_status["logic"]["2"] = True
                             menu:
                                 sphynx "Хочешь сыграть еще раз?"
 
@@ -100,9 +101,7 @@ label level1_logic:
                                     jump yes_or_no_game
                                 "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                     sphynx "До встречи! Заходи еще!"
-                                    hide bg pyrs
-                                    hide sph
-                                    jump start
+                                    jump logic_level
                     else:
                         $ yesorno_life -= 1
                         if yesorno_life==2:
@@ -122,9 +121,7 @@ label level1_logic:
                                     jump yes_or_no_game
                                 "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                     sphynx "До встречи! Заходи еще!"
-                                    hide bg pyrs
-                                    hide sph
-                                    jump start
+                                    jump logic_level
 
 
                     $ i += 1
@@ -139,6 +136,4 @@ label level1_logic:
                             jump yes_or_no_game
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                             sphynx "До встречи! Заходи еще!"
-                            hide bg pyrs
-                            hide sph
-                            jump start
+                            jump logic_level

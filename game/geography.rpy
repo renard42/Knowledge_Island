@@ -8,30 +8,52 @@ label geography:
 
     cat_geo "Добро пожаловать, странник!"
 
-
     show cat geo at right with move
     $ score = []
 
     label geo_level:
+        scene bg geo
+        show cat geo
+        $ check_geo = list(ship_status["geo"].values())
+        cat_geo "[check_geo]"
+        if False not in check_geo:
+            if geo_status == False:
+                $ geo_status = True
+                init:
+                    image p2 = "images/ship_piece2.png"
+                show p2 at Position(xalign=0.5, yalign=0.5)
+                cat_geo """
+                Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
+                Удачи на других островах!
+                """
+                hide bg england
+                hide cal england
+                call start
+            else:
+                menu:
+                    cat_geo "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"
+                    "Хочу!":
+                        jump geo_menu
+                    "Тогда я пойду дальше":
+                        cat "Удачи!"
+                        hide bg england
+                        hide cal england
+                        jump start
 
-        menu:
+        label geo_menu:
 
-            cat_geo "Какой уровень пррредпочитаешь?"
+            menu:
 
-            "Начнем с чего попроще":
-                $ i = 0
-                jump level0_geo
+                cat_geo "Какой уровень пррредпочитаешь?"
 
-            "А есть что-то среднее?":
-                $ i = 0
-                jump level1_geo
+                "Начнем с чего попроще":
+                    $ i = 0
+                    jump level0_geo
 
-            "Я уверен в себе! Давай самое сложное!":
+                "А есть что-то среднее?":
+                    $ i = 0
+                    jump level1_geo
 
-                jump level2_geo
+                "Я уверен в себе! Давай самое сложное!":
 
-
-        label level3_geo:
-
-            cat_geo "Ты смелый игрок! Вперед, мррр :3"
-            jump start
+                    jump level2_geo
