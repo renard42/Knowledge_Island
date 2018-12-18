@@ -88,6 +88,7 @@ label level0_math:
                     if i<end:
                         cat_math "Молодец!"
                     else:
+                        $ renpy.music.play(success, loop=False)
                         cat_math "Поздравляю! Ты прошел уровень!"
                         hide white
                         hide screen something
@@ -114,6 +115,7 @@ label level0_math:
                         cat_math "Непррррраввильный ответ! [know_how], поэтому правильный ответ [second_number]"
                         hide white
                         hide screen something
+                        $ renpy.music.play(fail, loop=False)
                         cat_math "Я победил! Деталька моя"
                         menu:
                             cat_math "Хочешь сыграть еще раз?"

@@ -59,6 +59,7 @@ label simonguess:
     if dasign!=thesign:
         $ err_check-=1
         if not err_check:
+            $ renpy.music.play(fail, loop=False)
             cat_eng "Я победил! Деталька моя"
             menu:
                 sphynx "Хочешь сыграть еще раз?"
@@ -79,6 +80,7 @@ label simonguess:
     jump simonguess
 label simonend:
     if len(sequence)==complete:
+        $ renpy.music.play(success, loop=False)
         cat_eng "Ты победил!"
         menu:
             sphynx "Хочешь сыграть еще раз?"

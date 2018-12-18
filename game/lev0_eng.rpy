@@ -166,6 +166,7 @@ while True:
             cat_eng "[res]"
             $ num_right += 1
             if num_right==6:
+                $ renpy.music.play(success, loop=False)
                 cat_geo "Уррррраа! Ты прошел уровень!"
 
 
@@ -188,6 +189,7 @@ while True:
                 cat_eng "[res] Осторожно, осталась последняя попытка!"
 
             if err == 0:
+                $ renpy.music.play(fail, loop=False)
                 hide screen send_word_screen
                 menu:
                     cat_geo "Ты проиграл, и детальку я тебе не отдам!\n Хочешь попробовать еще раз?"
