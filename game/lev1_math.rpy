@@ -71,13 +71,12 @@ label figure_lose:
             jump figures_game
         "Лучше еще потренируюсь и приду.":
             cat_math "Возвращайся, буду ждать!"
-            hide bg math
-            hide cat math
-            jump start
+            jump math_level
 
 label figure_win:
     hide screen figure_scr
     $ renpy.pause (0.1, hard = True)
+    $ ship_status["math"]["2"] = True
     menu:
         cat_math "Ты выиграл! Хочешь сыграть еще раз или пойдешь дальше?"
         "Давай!":
@@ -86,9 +85,7 @@ label figure_win:
             jump figures_game
         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
             cat_math "До встречи!"
-            hide bg math
-            hide cat math
-            jump start
+            jump math_level
 
 label level1_math:
     scene bg math
@@ -101,9 +98,7 @@ label level1_math:
             jump rules_figures
         "Не хочу, давай в другой раз.":
             cat_math "Заходи еще!"
-            hide bg math
-            hide cat math
-            jump math
+            jump math_level
     label rules_figures:
         cat_math """
         Правила этой игры просты, как дважды два:

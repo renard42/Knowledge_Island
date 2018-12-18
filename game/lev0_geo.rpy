@@ -8,7 +8,6 @@ init python:
             cities_info[line.split(',')[0]] = ','.join(line.split(',')[2:])
     cities_to_use = list(cities_info.keys())
     random.shuffle(cities_to_use)
-    used_cities = []
 
 define owl = Character("Сова", what_ysize = gui.textbox_height)
 label level0_geo:
@@ -48,6 +47,7 @@ label level0_geo:
                 jump rules
 
         label finally_game:
+            $ used_cities = []
             $ letter = False
             $ city = False
             if player == False:
@@ -111,7 +111,7 @@ label level0_geo:
                                 jump finally_game
                             "Нет, я лучше еще потренируюсь и приду":
                                 cat_geo "До встречи, я буду тебя ждать!"
-                                jump start
+                                jump geo_level
                     init python:
                         try:
                             del cities_to_use[cities_to_use.index(str(city))]
@@ -128,6 +128,7 @@ label level0_geo:
                 cat_geo "Ты победил! :3"
                 cat_geo "Молодец! Идем дальше?"
                 $ score.append('level0')
+                $ ship_status["geo"]["1"] = True
 
                 menu:
                     cat_geo "Хочешь сыграть еще раз?"
@@ -137,7 +138,5 @@ label level0_geo:
                         jump finally_game
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat_geo "До встречи! Заходи еще!"
-                        hide bg geo
-                        hide cat geo
                         hide screen game_buttons
-                        jump start
+                        jump geo_level

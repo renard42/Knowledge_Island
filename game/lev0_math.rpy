@@ -89,6 +89,7 @@ label level0_math:
                         cat_math "Молодец!"
                     else:
                         cat_math "Поздравляю! Ты прошел уровень!"
+                        $ ship_status["math"]["1"] = True
                         hide white
                         hide screen something
                         menu:
@@ -99,9 +100,7 @@ label level0_math:
 
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_math "До встречи! Заходи еще!"
-                                hide bg math
-                                hide cat math
-                                jump start
+                                jump math_level
                 else:
                     $ arithmetic_life -= 1
                     if arithmetic_life==2:
@@ -122,9 +121,7 @@ label level0_math:
                                 jump arithmetic_game
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_math "До встречи! Заходи еще!"
-                                hide bg math
-                                hide cat math
-                                jump start
+                                jump math_level
 
                 $ i += 1
                 hide white
@@ -141,6 +138,4 @@ label level0_math:
                             jump arithmetic_game
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                             cat_math "До встречи! Заходи еще!"
-                            hide bg math
-                            hide cat math
-                            jump start
+                            jump math_level

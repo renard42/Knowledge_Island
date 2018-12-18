@@ -41,16 +41,17 @@ label simonshow:
     $ random.shuffle(sequence)
     while i<len(sequence):
         $ thesign=sequence[i]
-
+        # display the actual sequence, sign by sign
+        # .. neutral screen (all greyed out)
         show screen simonvoid
         $ renpy.pause(0.5, hard=True)
         hide screen simonvoid
-
+        # ... a button is lighted on!
         show screen simondisplay
         $ renpy.pause(0.5, hard=True)
         hide screen simondisplay
         $ i+=1
-    $ i=0
+    $ i=0 # Yeah, the very cornerstone of the game is that line!!
 label simonguess:
     $ thesign=sequence[i]
     call screen simoncheck
@@ -65,7 +66,9 @@ label simonguess:
                     call simon pass (complete=5, toadd=1, err_check = 3)
                 "Нет, надо передохнуть":
                     sphynx "Возвращайся в другой раз"
-                    jump logic_level
+                    hide bg pyrs
+                    hide sph
+                    jump start
         else:
             "Ты ошибся! У тебя осталось [err_check] попыток"
             call simon pass (complete=5, toadd=1, err_check = err_check)
@@ -77,7 +80,6 @@ label simonguess:
 label simonend:
     if len(sequence)==complete:
         cat_eng "Ты победил!"
-        $ship_status["logic"]["3"] = True
         menu:
             sphynx "Хочешь сыграть еще раз?"
             "Конечно!":
@@ -85,7 +87,9 @@ label simonend:
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 sphynx "До встречи! Заходи еще!"
-                jump logic_level
+                hide bg pyrs
+                hide sph
+                jump start
                 return
     jump simonturn
 

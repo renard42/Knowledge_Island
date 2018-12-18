@@ -72,7 +72,9 @@ label guess:
                     call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0)
                 "Нет, надо передохнуть":
                     cat_math "Возвращайся в другой раз"
-                    jump math_level
+                    hide bg math
+                    hide cat math
+                    jump start
         else:
             "Ты ошибся! У тебя осталось попыток: [err_check]"
             call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check)
@@ -92,7 +94,6 @@ label guess:
 label math_end:
     if right_check==complete:
         cat_math "Ты победил!"
-        $ ship_status["math"]["3"] = True
         menu:
             cat_math "Хочешь сыграть еще раз?"
             "Конечно!":
@@ -100,7 +101,9 @@ label math_end:
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 cat_math "До встречи! Заходи еще!"
-                jump math_level
+                hide bg math
+                hide cat math
+                jump start
                 return
     call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
 

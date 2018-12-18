@@ -60,9 +60,7 @@ label level2_geo:
                 else:
                     cat_geo "Уррррраа! Ты прошел уровень!"
 
-                    $ score.append('level2')
-                    if len(score)==3:
-                        cat_geo "Молодец! Я дарю тебе мачту для твоего корабля!"
+                    $ship_status["geo"]["3"] = True
 
                     menu:
                         cat_geo "Хочешь сыграть еще раз?"
@@ -71,7 +69,7 @@ label level2_geo:
                             jump finally_game
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                             cat_geo "До встречи, умный ребенок!"
-                            jump start
+                            jump geo_level
 
             else:
                 $ num_err -= 1
@@ -89,7 +87,7 @@ label level2_geo:
                             $ num_err = 3
                         "Нет, я лучше еще потренируюсь и приду":
                             cat_geo "До встречи, я буду тебя ждать!"
-                            jump start
+                            jump geo_level
             $ i += 1
 
             $ player=False

@@ -12,8 +12,36 @@ label math:
 
     cat_math "С чего начнем?"
 
-    show cat math at left with move
     label math_level:
+
+        scene bg math
+        show cat math
+        show cat math at left with move
+        $ check_math = list(ship_status["math"].values())
+        if False not in check_math:
+            if math_status == False:
+                $ math_status = True
+                init:
+                    image p4 = "images/ship_piece4.png"
+                show p4 at Position(xalign=0.5, yalign=0.5)
+                cat_math """
+                Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
+                Удачи на других островах!
+                """
+                hide bg math
+                hide cat math
+                call start
+            else:
+                menu:
+                    cat_math "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"
+                    "Хочу!":
+                        jump math_menu
+                    "Тогда я пойду дальше":
+                        cat "Удачи!"
+                        hide bg math
+                        hide cat math
+                        jump start
+    label math_menu:
             menu:
 
                 cat_math "Какой уровень пррредпочитаешь?"

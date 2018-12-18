@@ -80,15 +80,14 @@ label level1_geo:
                             hide num3
                             hide num4
                             hide num5
+                            $ ship_status["geo"]["2"]=True
                             menu:
                                 cat_geo "Хочешь сыграть еще раз?"
                                 "Конечно!":
                                     jump game_pics
                                 "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                     cat_geo "До встречи! Заходи еще, юный географ!"
-                                    hide bg geo
-                                    hide cat geo
-                                    jump start
+                                    jump geo_level
 
                     else:
                         $ fourpics_life -= 1
@@ -126,8 +125,6 @@ label level1_geo:
                                     jump game_pics
                                 "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                     cat_geo "До встречи! Заходи еще, юный географ!"
-                                    hide bg geo
-                                    hide cat geo
-                                    jump start
+                                    jump geo_level
                     hide num5
                     $ i += 1
