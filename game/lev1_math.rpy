@@ -60,6 +60,7 @@ label figures_game:
 
 
 label figure_lose:
+    $ renpy.music.play(fail, loop=False)
     hide screen figure_scr
     $ renpy.pause (0.1, hard = True)
     menu:
@@ -76,6 +77,7 @@ label figure_lose:
             jump start
 
 label figure_win:
+    $ renpy.music.play(success, loop=False)
     hide screen figure_scr
     $ renpy.pause (0.1, hard = True)
     menu:

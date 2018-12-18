@@ -74,6 +74,7 @@ label level1_geo:
                             while n<len(new_info):
                                 $ renpy.say(cat_geo,new_info[n][:1 + new_info[n].rfind('.')])
                                 $ n+=1
+                            $ renpy.music.play(success, loop=False)
                             cat_geo "Уррррррраа! Ты прошел уровень!"
                             hide num1
                             hide num2
@@ -113,6 +114,7 @@ label level1_geo:
                             while n<len(new_info):
                                 $ renpy.say(cat_geo,new_info[n][:1 + new_info[n].rfind('.')])
                                 $ n+=1
+                            $ renpy.music.play(fail, loop=False)
                             cat_geo "Я победил! Деталька моя"
                             hide num1
                             hide num2

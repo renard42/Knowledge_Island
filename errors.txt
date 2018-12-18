@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lev0_math.rpy", line 79: invalid syntax
-    image some_example = Text(some_number, size=40)
-                      ^
-    
+File "game/level2_eng.rpy", line 94: expected menuitem
+    $ renpy.music.play(fail, loop=False)
+    ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Dec 11 10:17:01 2018
+Tue Dec 18 15:04:20 2018
