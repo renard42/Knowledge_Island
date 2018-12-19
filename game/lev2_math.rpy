@@ -6,13 +6,25 @@ label level2_math:
 
         "Интересно!":
             hide cat math
+<<<<<<< HEAD
             call game2_math pass (complete = 5, todd = 3, errr_check = 3, right_check=0)
+=======
+            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[])
+>>>>>>> Wording fix
 
         "Может другое?":
             jump math_level
 
+<<<<<<< HEAD
 label game2_math(complete = 5, todd = 3, errr_check = 3, right_check=0):
     #$ used = []
+=======
+label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0, used=[]):
+    $ used = []
+    $ right = []
+    $ wrong = []
+    $ lst = []
+>>>>>>> Wording fix
 
 label turn:
     python:
@@ -92,10 +104,23 @@ label math_end:
         $ renpy.music.play(success, loop=False)
         cat_math "Ты победил!"
         $ ship_status["math"]["3"] = True
+<<<<<<< HEAD
         cat_math "До встречи! Заходи еще!"
         jump math_level
     else:
         jump turn
+=======
+        menu:
+            cat_math "Хочешь сыграть еще раз?"
+            "Конечно!":
+                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0,  used=[])
+                return
+            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                cat_math "До встречи! Заходи еще!"
+                jump math_level
+                return
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check, used=used[:])
+>>>>>>> Wording fix
 
 screen lookatthis():
     text "У тебя есть несколько секунд, чтобы запомнить фигуру" xalign 0.5 yalign 0.1
