@@ -13,8 +13,9 @@ label math:
     label math_level:
 
         scene bg math
+        show cat math
         hide cat math
-        show cat math at left with move
+        show cat math at left
         $ check_math = list(ship_status["math"].values())
         if False not in check_math:
             if math_status == False:
