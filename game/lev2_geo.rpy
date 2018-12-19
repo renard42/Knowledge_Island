@@ -5,14 +5,15 @@ init python:
         #s = f.read()
     new_s = []
     for el in stroka.split('\n'):
-        new_s.append(tuple(el.split('\t')))
-    final = {el[0]:el[1] for el in new_s[:-1]}
+        if len(el)>0:
+            new_s.append(tuple(el.split('\t')))
+    geo2_final = {el[0]:el[1] for el in new_s}
 
-    countries_to_use = list(final.keys())
+    countries_to_use = list(geo2_final.keys())
     used = []
     info=[]
     for co in countries_to_use:
-        info.append(final[co])
+        info.append(geo2_final[co])
 
 
 
@@ -20,8 +21,6 @@ init python:
 label level2_geo:
 
     cat_geo "Ты дошел до самого сложного уровня!"
-    #cat_geo "[countries_to_use[0]]"
-    #cat_geo "[info[0]]"
     menu:
         cat_geo "У каждой страны есть свой флаг. Давай проверим, знаешь ли ты их."
 
@@ -43,7 +42,7 @@ label level2_geo:
             $ used.append(country_new)
             init:
                 image c = "images/[country_new].png"
-            $ country_info = final[country_new].split('.')[:-1]
+            $ country_info = geo2_final[country_new].split('.')[:-1]
 
             show c at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
                 zoom 3.0

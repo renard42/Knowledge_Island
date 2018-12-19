@@ -29,11 +29,7 @@ label english:
                 hide bg england
                 hide cat england
                 window hide
-<<<<<<< HEAD
-                call start
-=======
                 jump start
->>>>>>> 920ed9e... u need more fixes
             else:
                 menu:
                     cat_eng "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"

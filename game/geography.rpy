@@ -29,11 +29,7 @@ label geography:
                 hide p2
                 hide bg geo
                 hide cat geo
-<<<<<<< HEAD
-                call start
-=======
                 jump start
->>>>>>> 920ed9e... u need more fixes
             else:
                 menu:
                     cat_geo "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"

@@ -31,11 +31,7 @@ label math:
                 hide p4
                 hide bg math
                 hide cat math
-<<<<<<< HEAD
-                call start
-=======
                 jump start
->>>>>>> 920ed9e... u need more fixes
             else:
                 menu:
                     cat_math "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"
