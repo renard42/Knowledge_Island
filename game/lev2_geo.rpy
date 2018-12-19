@@ -38,7 +38,7 @@ label level2_geo:
         $ i = 0
         $ num_err = 3
 
-        while i<=4:
+        while i<=5:
             $ country_new = random.choice(list(set(countries_to_use) - set(used)))
             $ used.append(country_new)
             init:
@@ -50,7 +50,8 @@ label level2_geo:
             $ country = renpy.input("Угадай стрррррану:").title()
             hide c
             if country == country_new:
-                if i < 4:
+                $ i += 1
+                if i < 5:
                     cat_geo "Молодец! Вот тебе немного информации:"
                     $ n = 0
                     while n<len(country_info):
@@ -68,7 +69,7 @@ label level2_geo:
                         cat_geo "Хочешь сыграть еще раз?"
 
                         "Хочу! Давай повторим!":
-                            jump finally_game
+                            jump game_countries
                         "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                             cat_geo "До встречи, умный ребенок!"
                             jump geo_level
@@ -91,6 +92,6 @@ label level2_geo:
                         "Нет, я лучше еще потренируюсь и приду":
                             cat_geo "До встречи, я буду тебя ждать!"
                             jump geo_level
-            $ i += 1
+
 
             $ player=False
