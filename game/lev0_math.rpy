@@ -90,6 +90,7 @@ label level0_math:
                     else:
                         $ renpy.music.play(success, loop=False)
                         cat_math "Поздравляю! Ты прошел уровень!"
+                        $ ship_status["math"]["1"] = True
                         hide white
                         hide screen something
                         menu:

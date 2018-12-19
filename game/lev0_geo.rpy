@@ -56,7 +56,7 @@ label level0_geo:
                 cat_geo "Отлично! Начинай!"
 
             $ count = 0
-            $ geo0_life = 3
+            $ geo0_life = 2
             screen game_buttons:
                 hbox xalign 1.0 yalign 1.0:
                     imagebutton auto ("owl_help_%s.png") action Jump("cities_help")
@@ -88,14 +88,14 @@ label level0_geo:
 
                 elif player == True:
                     $ city = renpy.input("Назови город: ").title()
-                    while city.title() not in cities_db and geo0_life!=1:
+                    while city.title() not in cities_db and geo0_life!=0:
+                        cat_geo "Такого города [city] нет! Назови город на [letter[0]] или [letter[1]]. У тебя осталось [geo0_life] попытки"
                         $ geo0_life -=1
-                        cat_geo "Такого города [city] нет! У тебя осталось [geo0_life] попытки"
                         $ city = renpy.input("Назови город: ").title()
                     if letter:
-                        while (letter[0]!=city[0].upper() and letter[1]!=city[0].upper()) and geo0_life!=1:
+                        while (letter[0]!=city[0].upper() and letter[1]!=city[0].upper()) and geo0_life!=0:
+                            cat_geo "Твой город [city] начинается на неправильную букву, тебе нужен город на [letter[0]] или [letter[1]]! У тебя осталось [geo0_life] попытки"
                             $ geo0_life -=1
-                            cat_geo "Твой город [city] начинается на неправильную букву! У тебя осталось [geo0_life] попытки"
                             $ city = renpy.input("Назови город: ")
                     while city in used_cities:
                         cat_geo "Город [city] уже был. Назови другой"
