@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/english.rpy", line 32, in script call
+    call start from _call_start_1
+  File "game/script.rpy", line 45, in script
+    $ renpy.menu()
+  File "game/script.rpy", line 45, in <module>
+    $ renpy.menu()
+TypeError: menu() takes exactly 2 arguments (0 given)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/english.rpy", line 32, in script call
+    call start from _call_start_1
+  File "game/script.rpy", line 45, in script
+    $ renpy.menu()
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\ast.py", line 882, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Олеся\Anaconda projects\НИС\renpy-7.1.1-sdk\renpy\python.py", line 1913, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 45, in <module>
+    $ renpy.menu()
+TypeError: menu() takes exactly 2 arguments (0 given)
+
+Windows-8-6.2.9200
+Ren'Py 7.1.1.929
+KnowledgeIsland 1.0
+Wed Dec 19 13:33:12 2018
