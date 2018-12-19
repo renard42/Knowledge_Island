@@ -10,7 +10,7 @@ init python:
     geo2_final = {el[0]:el[1] for el in new_s}
 
     countries_to_use = list(geo2_final.keys())
-    used = []
+    geo_used = []
     info=[]
     for co in countries_to_use:
         info.append(geo2_final[co])
@@ -38,8 +38,8 @@ label level2_geo:
         $ num_err = 3
 
         while i<=5:
-            $ country_new = random.choice(list(set(countries_to_use) - set(used)))
-            $ used.append(country_new)
+            $ country_new = random.choice(list(set(countries_to_use) - set(geo_used)))
+            $ geo_used.append(country_new)
             init:
                 image c = "images/[country_new].png"
             $ country_info = geo2_final[country_new].split('.')[:-1]

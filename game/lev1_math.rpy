@@ -23,15 +23,15 @@ screen figure_scr:
 
 label figures_game:
     init python:
-        store.used = []
+        store.math_used = []
     label figures_turns_loop:
         while r!=5:
             python:
                 cards_list = []
                 task = random.choice(f)
-                while task in used:
+                while task in math_used:
                     task = random.choice(f)
-                used.append(task)
+                math_used.append(task)
                 store.task, store.imgs, store.correct = task.split(';')
                 imgs = imgs.split(',')
                 for i in range (0, len(imgs)):
