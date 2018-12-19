@@ -46,7 +46,12 @@ label level2_geo:
 
             show c at Position(xpos = 0.5, xanchor=0.5, ypos=0.5, yanchor=0.5):
                 zoom 3.0
-            $ country = renpy.input("Угадай стрррррану:").title()
+            $ country = renpy.input("Угадай стрррррану:")
+            if country =='сша' or country =='США':
+                $ country = 'США'
+            else:
+                $ country = country.title()
+
             hide c
             if country == country_new:
                 $ i += 1

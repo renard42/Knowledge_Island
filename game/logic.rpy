@@ -14,7 +14,8 @@ label logic:
 
     label logic_level:
 
-        #scene bg pyrs
+        scene bg pyrs
+        hide sph
         show sph at left with move
         $ check_logic = list(ship_status["logic"].values())
         if False not in check_logic:
@@ -27,9 +28,9 @@ label logic:
                 Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
                 Удачи на других островах!
                 """
-                #hide p3
-                #hide bg pyrs
-                #hide sph
+                hide p3
+                hide bg pyrs
+                hide sph
                 jump start
             else:
                 menu:
@@ -58,4 +59,6 @@ label logic:
 
                     jump level2_logic
                 "Хочу вернуться на карту":
+                    hide bg pyrs
+                    hide sph
                     jump start

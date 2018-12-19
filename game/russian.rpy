@@ -8,6 +8,8 @@ label russian:
     show cat russian at Position(xpos = 0.3, xanchor=0.3, ypos=0.5, yanchor=0.5)
 
     cat_russian "Приветствую тебя, путник!"
+
+    hide cat russian
     show cat russian at left
 
     menu:

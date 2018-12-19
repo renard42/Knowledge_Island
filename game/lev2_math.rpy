@@ -86,7 +86,7 @@ label guess:
 
             jump math_end
         else:
-            $ num = [len(right)-1-i]
+            $ num = len(right)-1-i
             "Верно, найди еще [num]!"
     jump guess
 

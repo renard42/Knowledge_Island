@@ -10,12 +10,10 @@ label math:
 
     cat_math "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
 
-    cat_math "С чего начнем?"
-
     label math_level:
 
         scene bg math
-        show cat math
+        hide cat math
         show cat math at left with move
         $ check_math = list(ship_status["math"].values())
         if False not in check_math:

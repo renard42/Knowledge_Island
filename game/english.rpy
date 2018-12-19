@@ -5,7 +5,7 @@ label english:
     scene bg england
     show cat england
 
-    cat "Добро пожаловать!"
+    cat_eng "Добро пожаловать!"
 
     cat_eng "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
 
