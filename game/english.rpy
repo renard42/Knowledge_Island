@@ -25,8 +25,10 @@ label english:
                 Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
                 Удачи на других островах!
                 """
+                hide p1
                 hide bg england
                 hide cal england
+                window hide
                 call start
             else:
                 menu:
@@ -44,15 +46,11 @@ label english:
             menu:
 
                 cat_eng "Какой уровень пррредпочитаешь?"
-
                 "Начнем с чего попроще":
-
                     jump level0_eng
-
                 "А есть что-то среднее?":
-
                     jump level1_eng
-
                 "Я уверен в себе! Давай самое сложное!":
-
                     jump level2_eng
+                "Хочу вернуться на карту":
+                    jump start

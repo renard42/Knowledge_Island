@@ -12,10 +12,10 @@ label geography:
     $ score = []
 
     label geo_level:
-        scene bg geo
-        show cat geo
+        #scene bg geo
+        #show cat geo
         $ check_geo = list(ship_status["geo"].values())
-        cat_geo "[check_geo]"
+        #cat_geo "[check_geo]"
         if False not in check_geo:
             if geo_status == False:
                 $ geo_status = True
@@ -26,8 +26,9 @@ label geography:
                 Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
                 Удачи на других островах!
                 """
-                hide bg england
-                hide cal england
+                hide p2
+                hide bg geo
+                hide cat geo
                 call start
             else:
                 menu:
@@ -36,8 +37,8 @@ label geography:
                         jump geo_menu
                     "Тогда я пойду дальше":
                         cat "Удачи!"
-                        hide bg england
-                        hide cal england
+                        hide bg geo
+                        hide cal geo
                         jump start
 
         label geo_menu:
@@ -57,3 +58,5 @@ label geography:
                 "Я уверен в себе! Давай самое сложное!":
 
                     jump level2_geo
+                "Хочу вернуться на карту":
+                    jump start

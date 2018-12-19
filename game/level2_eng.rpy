@@ -60,7 +60,7 @@ label level2_eng:
 
         init:
             image img = "images/eng_lev2/[word_img].png"
-
+        window hide
         show img at Position(xalign = 1.0, yalign=1.0)
         python:
             for i in w:
@@ -97,9 +97,12 @@ label level2_eng:
             menu:
                 cat "Ты проиграл :( Попробуешь еще раз?"
                 "Да, давай еще раз!":
+                    $ count = 0
                     jump numbers_game
                 "Лучше еще потренируюсь":
                     cat "Возвращайся!"
+                    window hide
+                    hide cat
                     jump eng_level
 
         if result3 == "win":
@@ -110,6 +113,7 @@ label level2_eng:
             $ renpy.pause (0.1, hard = True)
             $ renpy.pause (0.1, hard = True)
             "Все верррно!"
+            window hide
             if count!=5:
                 $count+=1
                 jump numbers_game
@@ -128,4 +132,6 @@ label level2_eng:
                         jump numbers_game
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat "До встречи! Заходи еще!"
+                        window hide
+                        hide cat
                         jump eng_level

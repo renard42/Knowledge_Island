@@ -173,6 +173,7 @@ label memo_game_win:
                     $ speak = description[e1]
                     sphynx "[speak]"
                     $ e1+=1
+        hide img_m
         sphynx "У меня все. Удачи в других играх!"
         jump logic_level
 

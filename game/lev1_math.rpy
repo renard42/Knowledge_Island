@@ -41,6 +41,7 @@ label figures_game:
                         cards_list.append ( {"value": "/images/figures/"+imgs[i], "correct":False} )
             show screen figure_scr
             $ renpy.say(cat_math,task)
+            window hide
             $ result2 = ui.interact()
             $ r+=1
             while result2!=True and mistakes!=0:
