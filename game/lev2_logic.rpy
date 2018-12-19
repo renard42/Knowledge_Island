@@ -79,11 +79,11 @@ label simonend:
     if len(sequence)==complete:
         $ renpy.music.play(success, loop=False)
         sphynx "Ты победил!"
-        $ship_status["logic"]["3"] = True
+        $ ship_status["logic"]["3"] = True
         menu:
             sphynx "Хочешь сыграть еще раз?"
             "Конечно!":
-                call simon pass (complete=5, toadd=1, err_check = 3) from _call_simon_3
+                call simon pass (complete=5, toadd=1, err_check = 3)
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 sphynx "До встречи! Заходи еще!"

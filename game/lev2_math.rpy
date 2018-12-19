@@ -6,39 +6,40 @@ label level2_math:
 
         "Интересно!":
             hide cat math
-            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[]) from _call_game2_math
+            call game2_math pass (complete = 5, todd = 3, errr_check = 3, right_check=0)
 
         "Может другое?":
             jump math_level
 
-label game2_math(complete = 5, toadd = 3, err_check = 3, right_check=0, used=[]):
+label game2_math(complete = 5, todd = 3, errr_check = 3, right_check=0):
     #$ used = []
-    $ right = []
-    $ wrong = []
-    $ lst = []
 
 label turn:
     python:
+        right = []
+        wrong = []
+        lst = []
         sum = random.randint(2,11)
         for _ in range(2):
             if sum<8:
                 first_right_num=random.randint(1,sum-1)
                 new_right=(first_right_num, sum-first_right_num)
-                while (new_right in used):
-                    first_right_num=random.randint(1,sum-1)
-                    new_right=(first_right_num, sum-first_right_num)
+                if len(right)<2:
+                    while new_right in right:
+                        first_right_num=random.randint(1,sum-1)
+                        new_right=(first_right_num, sum-first_right_num)
                 right.append(new_right)
-                used.append(new_right)
 
             else:
                 first_right_num=random.randint(sum-6,6)
                 new_right=(first_right_num, sum-first_right_num)
-                while (new_right in used):
-                    first_right_num=random.randint(sum-6,6)
-                    new_right=(first_right_num, sum-first_right_num)
+                if len(right)<2:
+                    while new_right in right:
+                        first_right_num=random.randint(sum-6,6)
+                        new_right=(first_right_num, sum-first_right_num)
                 right.append(new_right)
-                used.append(new_right)
-        for i in range(toadd):
+
+        for i in range(todd):
             wrong_first = random.randint(1,6)
             wrong_sec = random.randint(1,6)
             while (wrong_first, wrong_sec) in wrong:
@@ -63,20 +64,16 @@ label guess:
     call screen check
     $ dasign=_return
     if not any(thesign == dasign for thesign in right):
-        $ err_check-=1
-        if not err_check:
+        $ errr_check-=1
+        if not errr_check:
             $ renpy.music.play(fail, loop=False)
+
             cat_math "Я победил! Деталька моя"
-            menu:
-                cat_math "Хочешь сыграть еще раз?"
-                "А ты упорный!":
-                    call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0, used=[]) from _call_game2_math_1
-                "Нет, надо передохнуть":
-                    cat_math "Возвращайся в другой раз"
-                    jump math_level
+            cat_math "Возвращайся в другой раз"
+            jump math_level
+            return
         else:
-            "Ты ошибся! У тебя осталось попыток: [err_check]"
-            call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check,  used=used[:]) from _call_game2_math_2
+            "Ты ошибся! У тебя осталось попыток: [errr_check]"
     else:
         $ i+=1
 
@@ -95,16 +92,10 @@ label math_end:
         $ renpy.music.play(success, loop=False)
         cat_math "Ты победил!"
         $ ship_status["math"]["3"] = True
-        menu:
-            cat_math "Хочешь сыграть еще раз?"
-            "Конечно!":
-                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0,  used=[]) from _call_game2_math_3
-                return
-            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                cat_math "До встречи! Заходи еще!"
-                jump math_level
-                return
-    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check, used=used[:]) from _call_game2_math_4
+        cat_math "До встречи! Заходи еще!"
+        jump math_level
+    else:
+        jump turn
 
 screen lookatthis():
     text "У тебя есть несколько секунд, чтобы запомнить фигуру" xalign 0.5 yalign 0.1
