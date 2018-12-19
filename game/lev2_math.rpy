@@ -41,7 +41,7 @@ label turn:
         for i in range(toadd):
             wrong_first = random.randint(1,6)
             wrong_sec = random.randint(1,6)
-            while ((wrong_first, wrong_sec) in wrong) or ((wrong_first, wrong_sec) in right):
+            while (wrong_first, wrong_sec) in wrong:
                 wrong_first = random.randint(1,6)
                 wrong_sec = random.randint(1,6)
             if wrong_first+wrong_sec == sum:
@@ -70,13 +70,13 @@ label guess:
             menu:
                 cat_math "Хочешь сыграть еще раз?"
                 "А ты упорный!":
-                    call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0)
+                    call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0, used=[])
                 "Нет, надо передохнуть":
                     cat_math "Возвращайся в другой раз"
                     jump math_level
         else:
             "Ты ошибся! У тебя осталось попыток: [err_check]"
-            call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check)
+            call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check,  used=used[:])
     else:
         $ i+=1
 
@@ -98,13 +98,13 @@ label math_end:
         menu:
             cat_math "Хочешь сыграть еще раз?"
             "Конечно!":
-                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0)
+                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0,  used=[])
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 cat_math "До встречи! Заходи еще!"
                 jump math_level
                 return
-    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check)
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check, used=used[:])
 
 screen lookatthis():
     text "У тебя есть несколько секунд, чтобы запомнить фигуру" xalign 0.5 yalign 0.1

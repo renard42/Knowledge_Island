@@ -87,6 +87,7 @@ label level1_eng:
                     show given_animal at Position(xpos = 0.60, xanchor=0.3, ypos=0.2, yanchor=0.2)
                     if i<end:
                         cat_eng "Молодец!"
+                        hide given_animal
                     else:
                         $ renpy.music.play(success, loop=False)
                         cat_eng "Поздравляю! Ты прошел уровень!"
@@ -97,13 +98,27 @@ label level1_eng:
                             "Конечно!":
                                 $ ship_status["eng"]["2"] = True
                                 jump game_animal
-                            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                            "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
                                 cat_eng "До встречи! Заходи еще!"
                                 $ ship_status["eng"]["2"] = True
                                 hide screen game_eng_buttons
                                 jump eng_level
                 else:
                     show given_animal at Position(xpos = 0.60, xanchor=0.3, ypos=0.2, yanchor=0.2)
+                    if i == k-1:
+                        if animal_life>0:
+                            cat_eng "This is a [new_animal]! Хоть ты и ошибся, но ты все равно победил!"
+                            $ ship_status["eng"]["2"] = True
+                            hide given_animal
+                        menu:
+                            cat_eng "Хочешь сыграть еще раз?"
+
+                            "Конечно!":
+                                jump game_animal
+                            "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
+                                cat_eng "До встречи! Заходи еще!"
+                                hide screen game_eng_buttons
+                                jump eng_level
                     $ animal_life -= 1
                     if animal_life==2:
                         cat_eng "Непррррравильно! This is a [new_animal]! У тебя еще [animal_life] жизни"
@@ -122,9 +137,8 @@ label level1_eng:
 
                             "Конечно!":
                                 jump game_animal
-                            "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                            "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
                                 cat_eng "До встречи! Заходи еще!"
-
                                 hide screen game_eng_buttons
                                 jump eng_level
 
@@ -132,17 +146,3 @@ label level1_eng:
                     $ num = animal_life
                 hide given_animal
                 $ i += 1
-
-            if i == k:
-                if animal_life>0:
-                    cat_eng "Ты победил!"
-                menu:
-                    cat_eng "Хочешь сыграть еще раз?"
-
-                    "Конечно!":
-                        jump game_animal
-                    "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                        cat_eng "До встречи! Заходи еще!"
-
-                        hide screen game_eng_buttons
-                        jump eng_level

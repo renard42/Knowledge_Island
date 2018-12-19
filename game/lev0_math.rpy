@@ -90,7 +90,6 @@ label level0_math:
                     else:
                         $ renpy.music.play(success, loop=False)
                         cat_math "Поздравляю! Ты прошел уровень!"
-                        $ ship_status["math"]["1"] = True
                         hide white
                         hide screen something
                         menu:
@@ -101,21 +100,16 @@ label level0_math:
 
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_math "До встречи! Заходи еще!"
+                                hide cat math
                                 jump math_level
                 else:
-                    $ arithmetic_life -= 1
-                    if arithmetic_life==2:
-                        cat_math "Непррррравильно! [know_how], поэтому правильный ответ [second_number]"
-                        cat_math "У тебя еще [arithmetic_life] жизни"
-                    elif arithmetic_life==1:
-                        cat_math "Ну как же так? [know_how], поэтому правильный ответ [second_number]"
-                        cat_math "У тебя еще [arithmetic_life] жизнь"
-                    else:
-                        cat_math "Непррррраввильный ответ! [know_how], поэтому правильный ответ [second_number]"
-                        hide white
-                        hide screen something
-                        $ renpy.music.play(fail, loop=False)
-                        cat_math "Я победил! Деталька моя"
+                    if i == k-1:
+                        if arithmetic_life>0:
+                            cat_math "Непррррравильно! [know_how], поэтому правильный ответ [second_number]"
+                            hide white
+                            hide screen something
+                            cat_math "Ты победил!"
+                            $ ship_status["math"]["1"] = True
                         menu:
                             cat_math "Хочешь сыграть еще раз?"
 
@@ -123,21 +117,33 @@ label level0_math:
                                 jump arithmetic_game
                             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                                 cat_math "До встречи! Заходи еще!"
+                                hide cat math
                                 jump math_level
+                    else:
+                        $ arithmetic_life -= 1
+                        if arithmetic_life==2:
+                            cat_math "Непррррравильно! [know_how], поэтому правильный ответ [second_number]"
+                            cat_math "У тебя еще [arithmetic_life] жизни"
+                        elif arithmetic_life==1:
+                            cat_math "Ну как же так? [know_how], поэтому правильный ответ [second_number]"
+                            cat_math "У тебя еще [arithmetic_life] жизнь"
+                        else:
+                            cat_math "Непррррраввильный ответ! [know_how], поэтому правильный ответ [second_number]"
+                            hide white
+                            hide screen something
+                            $ renpy.music.play(fail, loop=False)
+                            cat_math "Я победил! Деталька моя"
+                            menu:
+                                cat_math "Хочешь сыграть еще раз?"
+
+                                "Конечно!":
+                                    jump arithmetic_game
+                                "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
+                                    cat_math "До встречи! Заходи еще!"
+                                    hide bg math
+                                    hide cat math
+                                    jump math_level
 
                 $ i += 1
                 hide white
                 hide screen something
-                if i == k:
-                    if arithmetic_life>0:
-                        hide white
-                        hide screen something
-                        cat_math "Ты победил!"
-                    menu:
-                        cat_math "Хочешь сыграть еще раз?"
-
-                        "Конечно!":
-                            jump arithmetic_game
-                        "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                            cat_math "До встречи! Заходи еще!"
-                            jump math_level

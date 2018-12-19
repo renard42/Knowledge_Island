@@ -5,16 +5,16 @@ label logic:
     scene bg pyrs
     show sph
 
+
     sphynx "Добро пожаловать!"
 
     sphynx "Если ты хочешь, чтобы я отдал тебе деталь корабля, тебе нужно пройти мое испытание!"
 
-    sphynx "С чего начнем?"
 
 
     label logic_level:
 
-        scene bg pyrs
+        #scene bg pyrs
         show sph at left with move
         $ check_logic = list(ship_status["logic"].values())
         if False not in check_logic:
@@ -27,8 +27,9 @@ label logic:
                 Молодец, ты прошел все мои игры! Отдаю тебе детальку для твоего корабля.
                 Удачи на других островах!
                 """
-                hide bg pyrs
-                hide sph
+                #hide p3
+                #hide bg pyrs
+                #hide sph
                 call start
             else:
                 menu:
@@ -56,3 +57,5 @@ label logic:
                 "Я уверен в себе! Давай самое сложное!":
 
                     jump level2_logic
+                "Хочу вернуться на карту":
+                    jump start

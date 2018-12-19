@@ -180,6 +180,7 @@ while True:
                         jump game_curiosities
                     "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                         cat_eng "До встречи, умный ребенок!"
+                        window hide
                         jump eng_level
 
         else:
@@ -198,8 +199,7 @@ while True:
                         jump game_curiosities
                     "Нет, я лучше еще потренируюсь и приду":
                         cat_eng "До встречи, я буду тебя ждать!"
-
-                        hide send_word_screen
+                        window hide
                         hide img
                         jump eng_level
 

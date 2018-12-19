@@ -42,7 +42,7 @@ label start:
         if len(not_done)>0:
             $ left = ', '.join(not_done)
             owl "Ты собрал еще не все детали! Остались игры на островах [left]"
-            hide map bg
+            #hide map bg
             jump start
 
 

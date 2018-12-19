@@ -35,12 +35,14 @@ label level1_geo:
                 $ fourpics_life = 3
                 $ countries = ["Мексика", "Украина", "Швеция", "Исландия", "Китай", "Индия", "Канада", "Австралия", "США", "Италия", "Россия", "Египет", "Япония", "Великобритания", "Франция"]
                 $ i = 0
+                $ k = 5
+                $ end = k-1
                 $ countries_dict = {"Мексика": ["мексика"], "Украина": ["украина"], "Швеция": ["швеция"], "Исландия": ["исландия"], "Китай": ["китай", "кнр"], "Индия": ["индия"], "Канада": ["канада"], "Австралия": ["австралия"], "Франция": ["франция"], "США": ["америка", "сша"], "Италия": ["италия"], "Россия": ["россия", "рф", "российская федерация"], "Египет": ["египет"], "Япония": ["япония"], "Великобритания": ["англия", "британия", "великобритания"]}
 
                 show cat geo at left with move
                 cat_geo "Начнем же!"
                 $ random_countries = renpy.random.sample(countries, 5)
-                while i<5:
+                while i<k:
                     $ fourpics_country = random_countries[i]
                     init:
                         image num1 = "images/[fourpics_country]/num1.png"
@@ -61,7 +63,7 @@ label level1_geo:
                         zoom 2.0
 
                     if user_country in countries_dict[fourpics_country]:
-                        if i < 4:
+                        if i < end:
                             cat_geo "Молодец! Вот тебе информация:"
                             $ n = 0
                             while n<len(new_info):
@@ -86,11 +88,33 @@ label level1_geo:
                                 cat_geo "Хочешь сыграть еще раз?"
                                 "Конечно!":
                                     jump game_pics
-                                "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                                    cat_geo "До встречи! Заходи еще, юный географ!"
+                                "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
+                                    cat_geo "Удачи тебе, юный географ!"
                                     jump geo_level
 
                     else:
+                        if i == k-1:
+                            if fourpics_life>0:
+                                cat_geo "Непррррравильно! Это [fourpics_country]!"
+                                cat_geo "Давай разеберем картинки!"
+                                $ n = 0
+                                while n<len(new_info):
+                                    $ renpy.say(cat_geo,new_info[n][:1 + new_info[n].rfind('.')])
+                                    $ n+=1
+                                cat_geo "Хоть ты и ошибся, но ты все равно победил!"
+                                hide num1
+                                hide num2
+                                hide num3
+                                hide num4
+                                hide num5
+                                hide given_animal
+                            menu:
+                                cat_geo "Хочешь сыграть еще раз?"
+                                "Конечно!":
+                                    jump game_pics
+                                "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
+                                    cat_geo "Удачи тебе, юный географ!"
+                                    jump geo_level
                         $ fourpics_life -= 1
                         if fourpics_life==2:
                             cat_geo "Непррррравильно! Это [fourpics_country]! У тебя еще [fourpics_life] жизни"
@@ -125,8 +149,8 @@ label level1_geo:
                                 cat_geo "Хочешь сыграть еще раз?"
                                 "Конечно!":
                                     jump game_pics
-                                "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
-                                    cat_geo "До встречи! Заходи еще, юный географ!"
+                                "Извини, но я пойду дальше - мне еще нужно в другие игры поиграть":
+                                    cat_geo "Удачи тебе, юный географ!"
                                     jump geo_level
                     hide num5
                     $ i += 1

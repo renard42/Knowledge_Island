@@ -24,7 +24,7 @@ label level2_logic:
 
             "А можешь повторить правила?":
                 sphynx "Кто понял жизнь, тот не спешит... можно и еще раз"
-                jump start_logic
+                jump repeat_rules
 
 
 label simon(complete=5, toadd=1, err_check = 3):
@@ -59,7 +59,7 @@ label simonguess:
         $ err_check-=1
         if not err_check:
             $ renpy.music.play(fail, loop=False)
-            cat_eng "Я победил! Деталька моя"
+            sphynx "Я победил! Деталька моя"
             menu:
                 sphynx "Хочешь сыграть еще раз?"
                 "А ты упорный!":
@@ -78,7 +78,7 @@ label simonguess:
 label simonend:
     if len(sequence)==complete:
         $ renpy.music.play(success, loop=False)
-        cat_eng "Ты победил!"
+        sphynx "Ты победил!"
         $ship_status["logic"]["3"] = True
         menu:
             sphynx "Хочешь сыграть еще раз?"
