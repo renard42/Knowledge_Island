@@ -16,11 +16,16 @@ label level1_eng:
         cat_eng "Но сначала послушай правила"
 
         label animals_rules:
-            $ animal_rules = renpy.file('/codes/animals/rules.txt').read().split('\n')
-            $ m = 0
-            while animal_rules[m]:
-                $ renpy.say(cat_eng,animal_rules[m][:-1])
-                $ m+=1
+            #$ animal_rules = renpy.file('/codes/animals/rules.txt').read().split('\n')
+            #$ m = 0
+            #while animal_rules[m]:
+                #$ renpy.say(cat_eng,animal_rules[m][:-1])
+                #$ m+=1
+            cat_eng """
+            Тебе будет дано описание какого-то животного на английском.
+            По нему ты должен будешь угадать наименование этого животного на английском.
+            Если ты чего-то не поймешь, не волнуйся: в правом нижнем углу совушка переведет описание на русский язык.
+            """
 
         menu:
             cat_eng "Ты понял правила или хочешь послушать еще раз?"

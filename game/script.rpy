@@ -33,7 +33,16 @@ label start:
         $ w = True
 
     if w == True:
-        jump win
+        init:
+            image ship = "images/ship.png"
+        scene map bg
+        show ship at Position(xalign=0.5, yalign=0.5)
+        owl """
+        Ты победил! Вот твой корабль.
+        Вперед, за новыми знаниями!
+        """
+        show ship at right with move
+        $ renpy.full_restart(transition=False, label='_invoke_main_menu', target='_main_menu')
 
     if _return=="status":
         $ locs = {"geo":"Географии", "math":"Математики", "eng":"Английского языка", "logic":"Логики"}
@@ -65,15 +74,3 @@ label start:
     elif _return=="logic":
         hide screen status_owl
         jump logic
-
-    label win:
-        init:
-            image ship = "images/ship.png"
-        scene map bg
-        show ship at Position(xalign=0.5, yalign=0.5)
-        owl """
-        Ты победил! Вот твой корабль.
-        Вперед, за новыми знаниями!
-        """
-        show ship at right with move
-        return

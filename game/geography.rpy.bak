@@ -29,7 +29,7 @@ label geography:
                 hide p2
                 hide bg geo
                 hide cat geo
-                call start from _call_start_2
+                call start
             else:
                 menu:
                     cat_geo "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"

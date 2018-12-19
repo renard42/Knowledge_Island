@@ -191,7 +191,7 @@ label level0_logic:
             scene bg pyrs
             $ max_time = 60
             $ ww, hh = 4, 4
-            call memoria_game
+            call memoria_game from _call_memoria_game
             return
 
         "Лучше в другой раз":

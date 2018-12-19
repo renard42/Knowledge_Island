@@ -6,7 +6,7 @@ label level2_math:
 
         "Интересно!":
             hide cat math
-            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[])
+            call game2_math pass (complete = 5, toadd =3, err_check = 3, right_check=0, used=[]) from _call_game2_math
 
         "Может другое?":
             jump math_level
@@ -70,13 +70,13 @@ label guess:
             menu:
                 cat_math "Хочешь сыграть еще раз?"
                 "А ты упорный!":
-                    call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0, used=[])
+                    call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0, used=[]) from _call_game2_math_1
                 "Нет, надо передохнуть":
                     cat_math "Возвращайся в другой раз"
                     jump math_level
         else:
             "Ты ошибся! У тебя осталось попыток: [err_check]"
-            call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check,  used=used[:])
+            call game2_math pass (complete = 5, toadd=3, err_check = err_check, right_check=right_check,  used=used[:]) from _call_game2_math_2
     else:
         $ i+=1
 
@@ -98,13 +98,13 @@ label math_end:
         menu:
             cat_math "Хочешь сыграть еще раз?"
             "Конечно!":
-                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0,  used=[])
+                call game2_math pass (complete = 5, toadd=3, err_check = 3, right_check=0,  used=[]) from _call_game2_math_3
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 cat_math "До встречи! Заходи еще!"
                 jump math_level
                 return
-    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check, used=used[:])
+    call game2_math pass (complete = 5, toadd=toadd, err_check = err_check, right_check=right_check, used=used[:]) from _call_game2_math_4
 
 screen lookatthis():
     text "У тебя есть несколько секунд, чтобы запомнить фигуру" xalign 0.5 yalign 0.1
