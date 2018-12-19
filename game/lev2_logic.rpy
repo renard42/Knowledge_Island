@@ -20,7 +20,7 @@ label level2_logic:
             sphynx "Ты понял правила или хочешь послушать еще раз?"
             "Всё очевидно, давай скорее начнем!":
                 sphynx "Ну, вперед"
-                call simon pass (complete=5, toadd=1, err_check = 3)
+                call simon pass (complete=5, toadd=1, err_check = 3) from _call_simon
 
             "А можешь повторить правила?":
                 sphynx "Кто понял жизнь, тот не спешит... можно и еще раз"
@@ -63,13 +63,13 @@ label simonguess:
             menu:
                 sphynx "Хочешь сыграть еще раз?"
                 "А ты упорный!":
-                    call simon pass (complete=5, toadd=1, err_check = 3)
+                    call simon pass (complete=5, toadd=1, err_check = 3) from _call_simon_1
                 "Нет, надо передохнуть":
                     sphynx "Возвращайся в другой раз"
                     jump logic_level
         else:
             "Ты ошибся! У тебя осталось [err_check] попыток"
-            call simon pass (complete=5, toadd=1, err_check = err_check)
+            call simon pass (complete=5, toadd=1, err_check = err_check) from _call_simon_2
     if dasign==thesign:
         $ i+=1
         if i==len(sequence):
@@ -83,7 +83,7 @@ label simonend:
         menu:
             sphynx "Хочешь сыграть еще раз?"
             "Конечно!":
-                call simon pass (complete=5, toadd=1, err_check = 3)
+                call simon pass (complete=5, toadd=1, err_check = 3) from _call_simon_3
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 sphynx "До встречи! Заходи еще!"

@@ -118,6 +118,7 @@ label memoria_game:
         jump memo_game_loop
 
 label memo_game_lose:
+    $ renpy.music.play(fail, loop=False)
     hide screen memo_scr
     $ renpy.pause (0.1, hard = True)
     menu:
@@ -126,13 +127,15 @@ label memo_game_lose:
             jump memoria_game
         "Нет, я лучше потом зайду":
             sphynx "Возвррращайся!"
-            jump start
+            jump logic_level
 
 label memo_game_win:
+    $ renpy.music.play(success, loop=False)
     hide screen memo_scr
     $ renpy.pause (0.1, hard = True)
     show sph at left with move
     sphynx "Молодец, ты победил!"
+    $ ship_status["logic"]["1"] = True
     $ musical = renpy.file('/codes/memoria/music.txt').read().split('\n')
     $ ms = {}
     $ e = 0
@@ -150,7 +153,7 @@ label memo_game_win:
             jump explain
         "Нет, я все знаю. Давай дальше!":
             sphynx "Тогда удачи в другой игре!"
-            jump start
+            jump logic_level
 
     label explain:
         $ store.e=-1
@@ -170,10 +173,9 @@ label memo_game_win:
                     $ speak = description[e1]
                     sphynx "[speak]"
                     $ e1+=1
-        sphynx "У меня все. Отправляйся за другими детальками!"
-        hide bg sand
-        hide sph
-        jump start
+        hide img_m
+        sphynx "У меня все. Удачи в других играх!"
+        jump logic_level
 
 
 
@@ -194,4 +196,4 @@ label level0_logic:
 
         "Лучше в другой раз":
             sphynx "Приходи еще!"
-            jump start
+            jump logic_level

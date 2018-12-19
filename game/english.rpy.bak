@@ -27,9 +27,9 @@ label english:
                 """
                 hide p1
                 hide bg england
-                hide cat england
+                hide cal england
                 window hide
-                jump start
+                call start
             else:
                 menu:
                     cat_eng "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"
@@ -42,6 +42,7 @@ label english:
 
 
         label eng_menu:
+            show cat england at left with move
             menu:
 
                 cat_eng "Какой уровень пррредпочитаешь?"

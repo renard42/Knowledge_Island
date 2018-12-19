@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/level2_eng.rpy", line 94: expected menuitem
-    $ renpy.music.play(fail, loop=False)
-    ^
+File "game/script.rpy", line 45: expected statement.
+    Quit()
+          ^
 
 Ren'Py Version: Ren'Py 7.1.1.929
-Tue Dec 18 15:04:20 2018
+Wed Dec 19 13:23:23 2018
