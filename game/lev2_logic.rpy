@@ -24,7 +24,7 @@ label level2_logic:
 
             "А можешь повторить правила?":
                 sphynx "Кто понял жизнь, тот не спешит... можно и еще раз"
-                jump start_logic
+                jump repeat_rules
 
 
 label simon(complete=5, toadd=1, err_check = 3):

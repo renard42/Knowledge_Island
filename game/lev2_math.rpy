@@ -41,7 +41,7 @@ label turn:
         for i in range(toadd):
             wrong_first = random.randint(1,6)
             wrong_sec = random.randint(1,6)
-            while ((wrong_first, wrong_sec) in wrong) or ((wrong_first, wrong_sec) in right):
+            while (wrong_first, wrong_sec) in wrong:
                 wrong_first = random.randint(1,6)
                 wrong_sec = random.randint(1,6)
             if wrong_first+wrong_sec == sum:
