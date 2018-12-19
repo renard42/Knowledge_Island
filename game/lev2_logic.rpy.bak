@@ -24,7 +24,7 @@ label level2_logic:
 
             "А можешь повторить правила?":
                 sphynx "Кто понял жизнь, тот не спешит... можно и еще раз"
-                jump start_logic
+                jump repeat_rules
 
 
 label simon(complete=5, toadd=1, err_check = 3):
@@ -41,17 +41,16 @@ label simonshow:
     $ random.shuffle(sequence)
     while i<len(sequence):
         $ thesign=sequence[i]
-        # display the actual sequence, sign by sign
-        # .. neutral screen (all greyed out)
+
         show screen simonvoid
         $ renpy.pause(0.5, hard=True)
         hide screen simonvoid
-        # ... a button is lighted on!
+
         show screen simondisplay
         $ renpy.pause(0.5, hard=True)
         hide screen simondisplay
         $ i+=1
-    $ i=0 # Yeah, the very cornerstone of the game is that line!!
+    $ i=0
 label simonguess:
     $ thesign=sequence[i]
     call screen simoncheck
@@ -59,16 +58,15 @@ label simonguess:
     if dasign!=thesign:
         $ err_check-=1
         if not err_check:
-            cat_eng "Я победил! Деталька моя"
+            $ renpy.music.play(fail, loop=False)
+            sphynx "Я победил! Деталька моя"
             menu:
                 sphynx "Хочешь сыграть еще раз?"
                 "А ты упорный!":
                     call simon pass (complete=5, toadd=1, err_check = 3)
                 "Нет, надо передохнуть":
                     sphynx "Возвращайся в другой раз"
-                    hide bg pyrs
-                    hide sph
-                    jump start
+                    jump logic_level
         else:
             "Ты ошибся! У тебя осталось [err_check] попыток"
             call simon pass (complete=5, toadd=1, err_check = err_check)
@@ -79,7 +77,9 @@ label simonguess:
     jump simonguess
 label simonend:
     if len(sequence)==complete:
-        cat_eng "Ты победил!"
+        $ renpy.music.play(success, loop=False)
+        sphynx "Ты победил!"
+        $ship_status["logic"]["3"] = True
         menu:
             sphynx "Хочешь сыграть еще раз?"
             "Конечно!":
@@ -87,9 +87,7 @@ label simonend:
                 return
             "Извини, но я пойду дальше - мне еще много деталек нужно собрать":
                 sphynx "До встречи! Заходи еще!"
-                hide bg pyrs
-                hide sph
-                jump start
+                jump logic_level
                 return
     jump simonturn
 

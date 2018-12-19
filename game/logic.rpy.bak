@@ -30,7 +30,7 @@ label logic:
                 #hide p3
                 #hide bg pyrs
                 #hide sph
-                jump start
+                call start
             else:
                 menu:
                     sphynx "Ты здесь уже был и получил деталь. Но может, ты очень сыграть еще раз?"
